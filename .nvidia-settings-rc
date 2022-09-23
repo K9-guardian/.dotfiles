@@ -1,0 +1,21 @@
+#
+# /home/k9guardian/.nvidia-settings-rc
+#
+# Configuration file for nvidia-settings - the NVIDIA Settings utility
+# Generated on Wed Sep 21 11:07:11 2022
+#
+
+# ConfigProperties:
+
+RcFileLocale = C
+DisplayStatusBar = Yes
+SliderTextEntries = Yes
+IncludeDisplayNameInConfigFile = No
+ShowQuitDialog = No
+UpdateRulesOnProfileNameChange = Yes
+Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = Memory_Used_(GPU_0),Yes,3000
+
+# Attributes:
+
