@@ -1,0 +1,102 @@
+defaultIndent: "    "
+
+indentAfterItems:
+  itemize: 0
+  enumerate: 0
+
+noAdditionalIndent:
+  center: 1
+  displayMath: 1
+  inlineMath: 1
+
+lookForAlignDelims:
+ tabular: 0
+ tabularx: 0
+ longtable: 0
+ tabu: 0
+ array: 0
+ matrix: 0
+ listabla: 0
+ # amsmath
+ align: 0
+ align*: 0
+ alignat: 0
+ alignat*: 0
+ aligned: 0
+ bmatrix: 0
+ Bmatrix: 0
+ cases: 0
+ flalign: 0
+ flalign*: 0
+ pmatrix: 0
+ vmatrix: 0
+ Vmatrix: 0
+ # mathtools
+ cases*: 0
+ dcases: 0
+ dcases*: 0
+ rcases: 0
+ rcases*: 0
+ drcases: 0
+ drcases*: 0
+ # nicematrix
+ NiceTabular: 0
+ NiceMatrix: 0
+ pNiceMatrix: 0
+ bNiceMatrix: 0
+ BNiceMatrix: 0
+ vNiceMatrix: 0
+ VNiceMatrix: 0
+ NiceArray: 0
+ pNiceArrayC: 0
+ bNiceArrayC: 0
+ BNiceArrayC: 0
+ vNiceArrayC: 0
+ VNiceArrayC: 0
+ NiceArrayCwithDelims: 0
+ pNiceArrayRC: 0
+ bNiceArrayRC: 0
+ BNiceArrayRC: 0
+ vNiceArrayRC: 0
+ VNiceArrayRC: 0
+ NiceArrayRCwithDelims: 0
+ # tabularray
+ tblr: 0
+ longtblr: 0
+ talltblr: 0
+
+modifyLineBreaks:
+  oneSentencePerLine:
+    manipulateSentences: 1
+    removeSentenceLineBreaks: 0
+
+fineTuning:
+  modifyLineBreaks:
+    betterFullStop: |-
+      (?x)                                # ignore spaces in the below
+      (?:                                 #
+        \.\)                              # .) 
+        (?!\h*[a-z])                      # not *followed by* a-z
+      )                                   #
+      |                                   # OR
+      (?:                                 #
+        (?<!                              # not *preceeded by*
+          (?:                             #
+            (?:[eE]\.[gG])                # e.g OR E.g OR e.G OR E.G
+            |                             #
+            (?:[iI]\.[eE])                # i.e OR I.e OR i.E OR I.E
+            |                             #
+            (?:etc)                       # etc
+          )                               #
+        )                                 #
+      )                                   # 
+      \.(?:\\\]|)                         # .\]|.
+      (?!                                 # not *followed by*
+        (?:                               #
+          [a-zA-Z0-9-~,]                  #
+          |                               #
+          \),                             # ),
+          |                               #
+          \)\.                            # ).
+        )                                 #
+      )                                   #

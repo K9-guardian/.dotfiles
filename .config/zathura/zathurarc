@@ -1,0 +1,7 @@
+set adjust-open width
+
+set selection-clipboard clipboard
+
+set recolor true
+set window-height 10000
+set window-width 10000
