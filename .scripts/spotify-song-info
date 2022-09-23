@@ -1,0 +1,8 @@
+#!/bin/sh
+ARTIST=$(playerctl --player=spotify metadata artist)
+COVER="$XDG_CACHE_HOME/spotify-song-info-album-art.jpeg"
+TITLE=$(playerctl --player=spotify metadata title)
+
+wget -qO $COVER $(playerctl --player=spotify metadata mpris:artUrl)
+
+notify-send --expire-time=3000 --icon=$COVER "$TITLE" "$ARTIST"
