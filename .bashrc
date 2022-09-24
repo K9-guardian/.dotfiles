@@ -95,9 +95,6 @@ if [ -x /usr/bin/dircolors ]; then
   alias egrep='egrep --color=auto'
 fi
 
-alias ..='cd ..'
-alias sl='shuf -e -- "" "-a" "-l" "-F" | head -1 | xargs sl'
-
 clip() {
   xclip -selection clipboard "$@" > /dev/null 2>&1
 }
@@ -114,6 +111,8 @@ alias view='nvim -R'
 alias vim='nvim'
 alias vimdiff='nvim -d'
 
+alias ..='cd ..'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias gr='cd "$(git rev-parse --show-toplevel)"'
 alias icat='kitty +kitten icat --align left'
+alias sl='shuf -e -- "" "-a" "-l" "-F" | head -1 | xargs sl'
