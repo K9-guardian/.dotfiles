@@ -29,6 +29,8 @@ export TEXMFHOME="$XDG_DATA_HOME/texmf"
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export SQLITE_HISTORY="$XDG_DATA_HOME/sqlite_history"
 
+export MATLAB_LOG_DIR="$XDG_STATE_HOME/matlab"
+
 export CABAL_DIR="$XDG_CACHE_HOME/cabal"
 export GHCUP_USE_XDG_DIRS=true
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
