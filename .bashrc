@@ -95,10 +95,6 @@ if [ -x /usr/bin/dircolors ]; then
   alias egrep='egrep --color=auto'
 fi
 
-clip() {
-  xclip -selection clipboard "$@" > /dev/null 2>&1
-}
-
 export EXA_ICON_SPACING=2
 alias ls='exa --group-directories-first --icons --color-scale'
 alias la='ls -a'
