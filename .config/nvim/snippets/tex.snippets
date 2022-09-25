@@ -10,9 +10,7 @@ snippet bgn Insert preamble
 	\\newcommand{\\set}[1]{\\{#1\\}}
 	\\renewcommand{\\lor}{\\text{ or }}
 	\\renewcommand{\\land}{\\text{ and }}
-	\\newenvironment{bsmallmatrix}
-	    {\\left[\\begin{smallmatrix}}
-	    {\\end{smallmatrix}\\right]}
+	\\newenvironment{bsmallmatrix}{\\begin{smallmatrix}}{\\end{smallmatrix}}
 	\\newcommand{\\qsmallmat}[4]
 	    {\\begin{bsmallmatrix} #1 & #2 \\\\ #3 & #4 \\end{bsmallmatrix}}
 	\\newcommand{\\qmat}[4]{\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}}
@@ -28,3 +26,9 @@ snippet bgn Insert preamble
 	$0
 
 	\\end{document}
+
+snippet im Inline math
+	\\($1\\)$0
+
+snippet dm Display math
+	\\[$1\\]$0
