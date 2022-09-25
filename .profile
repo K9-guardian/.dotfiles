@@ -50,7 +50,8 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 PATH="$JAVA_HOME/bin:$PATH"
 PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
 
-source "/home/k9guardian/.local/share/cargo/env"
+PATH="$XDG_DATA_HOME/jdtls/bin:$PATH"
+source "$XDG_DATA_HOME/cargo/env"
 source "$XDG_DATA_HOME/ghcup/env"
 
 PATH="$HOME/.scripts:$PATH"
