@@ -23,7 +23,7 @@ endfunction
 augroup vimtex
  au!
  au User VimtexEventQuit     VimtexClean
- au User VimtexEventQuit call CloseViewers()
+ au User VimtexEventQuit     call CloseViewers()
  au User VimtexEventInitPost VimtexCompile
 augroup END
 ]])

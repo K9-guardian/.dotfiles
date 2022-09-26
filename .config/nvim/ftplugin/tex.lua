@@ -4,6 +4,8 @@ vim.b.surround_113 = "`\r'"
 vim.g.vimtex_syntax_nospell_comments = 1
 vim.opt_local.spell = true
 
+vim.api.nvim_create_autocmd("BufEnter", { command = "setlocal indentexpr=" }) -- Tacky :(
+
 local opts = { buffer = true }
 
 vim.keymap.set("n", "dsm", "<Plug>(vimtex-env-delete-math)", opts)
