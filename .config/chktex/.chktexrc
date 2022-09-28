@@ -2,4 +2,4 @@ TabSize = 4
 
 CmdLine { -v2 }
 
-Silent { \State \Return \Else }[ \End* ]
+Silent { \LaTeX \State \Return \Else }[ \End* ]

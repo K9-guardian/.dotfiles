@@ -8,6 +8,7 @@ noAdditionalIndent:
   center: 1
   displayMath: 1
   inlineMath: 1
+  rSection: 1
 
 lookForAlignDelims:
  tabular: 0
