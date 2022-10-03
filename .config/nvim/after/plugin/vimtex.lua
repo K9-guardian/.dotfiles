@@ -8,6 +8,8 @@ vim.g.vimtex_indent_bib_enabled = 0
 
 vim.g.vimtex_imaps_leader = "@"
 
+vim.g.vimtex_mappings_disable = { i = { "]]" } }
+
 local function close_viewers()
    if (os.execute("xdotool --version") == 0 and
        vim.b.vimtex.viewer.xwin_id and
@@ -16,12 +18,13 @@ local function close_viewers()
    end
 end
 
-vim.cmd([[
-" Compile on initialization, cleanup on quit
-augroup vimtex
- au!
- au User VimtexEventQuit     VimtexClean
- au User VimtexEventQuit     lua close_viewers()
- au User VimtexEventInitPost VimtexCompile
-augroup END
-]])
+vim.api.nvim_create_augroup("vimtex", {})
+vim.api.nvim_create_autocmd("User", {
+   pattern = "VimtexEventInitPost", group = "vimtex", command = "VimtexCompile"
+})
+vim.api.nvim_create_autocmd("User", {
+   pattern = "VimtexEventQuit", group = "vimtex", callback = close_viewers
+})
+vim.api.nvim_create_autocmd("User", {
+   pattern = "VimtexEventQuit", group = "vimtex", command = "VimtexClean"
+})
