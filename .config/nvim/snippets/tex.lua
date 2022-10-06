@@ -78,7 +78,7 @@ return {
       i(0),
    }, { condition = in_mathzone }),
    s({
-      trig = "([%a])bf",
+      trig = "([%a%d])bf",
       regTrig = true,
       wordTrig = false,
       name = "Math boldface"
@@ -86,5 +86,16 @@ return {
       f(function(_, snip) return "\\mathbf{" .. snip.captures[1] .. "}" end, {}),
       i(0),
    }, { condition = in_mathzone }),
-   s({ trig = "inv", name = "Inverse" }, { t("^{-1}") }, { condition = in_mathzone })
+   s({ trig = "__", wordTrig = false, name = "Subscript" }, {
+      t("_{"), i(1), t("}"), i(0)
+   }, { condition = in_mathzone }),
+   s({ trig = "**", wordTrig = false, name = "Superscript" }, {
+      t("^{"), i(1), t("}"), i(0)
+   }, { condition = in_mathzone }),
+   s({ trig = "inv", wordTrig = false, name = "Inverse" }, {
+      t("^{-1}")
+   }, { condition = in_mathzone }),
+   s({ trig = "//", name = "Fraction" }, {
+      t("\\frac{"), i(1), t("}{"), i(2), t("}"), i(0)
+   }, { condition = in_mathzone }),
 }
