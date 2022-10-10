@@ -17,7 +17,8 @@ return {
          "\\newcommand{\\R}{\\mathds{R}}",
          "\\newcommand{\\Q}{\\mathds{Q}}",
          "\\newcommand{\\C}{\\mathds{C}}",
-         "\\newcommand{\\set}[1]{\\{#1\\}}",
+         "\\newcommand{\\set}[1]{\\left\\{#1\\right\\}}",
+         "\\newcommand{\\abs}[1]{\\left|#1\\right|}",
          "\\renewcommand{\\lor}{\\text{ or }}",
          "\\renewcommand{\\land}{\\text{ and }}",
          "\\newcommand{\\qmat}[4]{\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}}",
@@ -89,7 +90,7 @@ return {
    s({ trig = "__", wordTrig = false, name = "Subscript" }, {
       t("_{"), i(1), t("}"), i(0)
    }, { condition = in_mathzone }),
-   s({ trig = "**", wordTrig = false, name = "Superscript" }, {
+   s({ trig = "^^", wordTrig = false, name = "Superscript" }, {
       t("^{"), i(1), t("}"), i(0)
    }, { condition = in_mathzone }),
    s({ trig = "inv", wordTrig = false, name = "Inverse" }, {
