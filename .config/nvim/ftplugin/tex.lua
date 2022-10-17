@@ -6,6 +6,11 @@ vim.opt_local.spell = true
 
 local opts = { buffer = true }
 
+-- TODO: Make an abbreviation to open the hw file lol
+-- vim.keymap.set("c", "hw", function()
+--    os.execute("ls")
+-- end, opts)
+
 vim.keymap.set("n", "dsm", "<Plug>(vimtex-env-delete-math)", opts)
 vim.keymap.set("n", "csm", "<Plug>(vimtex-env-change-math)", opts)
 vim.keymap.set("n", "tsm", "<Plug>(vimtex-env-toggle-math)", opts)

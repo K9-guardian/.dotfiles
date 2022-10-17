@@ -87,6 +87,15 @@ return {
       f(function(_, snip) return "\\mathbf{" .. snip.captures[1] .. "}" end, {}),
       i(0),
    }, { condition = in_mathzone }),
+   s({
+      trig = "([%a%d])til",
+      regTrig = true,
+      wordTrig = false,
+      name = "Tilde"
+   }, {
+      f(function(_, snip) return "\\tilde{" .. snip.captures[1] .. "}" end, {}),
+      i(0),
+   }, { condition = in_mathzone }),
    s({ trig = "__", wordTrig = false, name = "Subscript" }, {
       t("_{"), i(1), t("}"), i(0)
    }, { condition = in_mathzone }),
