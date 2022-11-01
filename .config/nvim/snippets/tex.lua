@@ -2,10 +2,6 @@
 
 local function in_mathzone() return vim.fn["vimtex#syntax#in_mathzone"]() == 1 end
 
-local function in_list()
-   return vim.tbl_contains({ "enumerate", "itemize" }, vim.fn["vimtex#env#get_inner"]()["name"])
-end
-
 return {
    s({ trig = "bgn", name = "Setup document" }, {
       t {
@@ -22,7 +18,10 @@ return {
          "\\renewcommand{\\lor}{\\text{ or }}",
          "\\renewcommand{\\land}{\\text{ and }}",
          "\\newcommand{\\qmat}[4]{\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}}",
-         "\\newcommand{\\vect}[1]{\\setstackEOL{,}\\bracketVectorstack{#1}}",
+         "\\newcommand{\\vect}[1]{\\begin{bmatrix} #1 \\end{bmatrix}}",
+         "\\newcommand{\\inprod}[1]{\\left\\langle#1\\right\\rangle}",
+         "\\DeclareMathOperator{\\rank}{rank}",
+         "\\DeclareMathOperator{\\nullity}{nullity}",
          "",
          "\\title{",
       }, i(1), t {
@@ -47,14 +46,8 @@ return {
    }),
    parse({ trig = "im", name = "Inline math" }, "\\($1\\)$0"),
    parse({ trig = "dm", name = "Display math" }, "\\[$1\\]$0"),
-   parse({ trig = "enum", name = "Enumerate environment" },
-      "\\begin{enumerate}\n\t\\item $0\n\\end{enumerate}"),
-   parse({ trig = "item", name = "Itemize environment" },
-      "\\begin{itemize}\n\t\\item $0\n\\end{itemize}"),
-   s({ trig = "i", name = "Insert new item" }, { t("\\item ") }, { show_condition = in_list }),
-   s({ trig = "p", name = "Insert new item page" },
-      { t({ "\\clearpage", "\\item " }) },
-      { show_condition = in_list }),
+   s({ trig = "i", name = "Insert new item" }, { t("\\item ") }),
+   s({ trig = "p", name = "Insert new item page" }, { t({ "\\clearpage", "\\item " }) }),
 }, {
    s({
       trig = "([%a}])(%d)",
@@ -85,6 +78,15 @@ return {
       name = "Math boldface"
    }, {
       f(function(_, snip) return "\\mathbf{" .. snip.captures[1] .. "}" end, {}),
+      i(0),
+   }, { condition = in_mathzone }),
+   s({
+      trig = "([%a%d])hat",
+      regTrig = true,
+      wordTrig = false,
+      name = "Hat"
+   }, {
+      f(function(_, snip) return "\\hat{" .. snip.captures[1] .. "}" end, {}),
       i(0),
    }, { condition = in_mathzone }),
    s({

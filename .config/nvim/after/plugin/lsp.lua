@@ -45,8 +45,7 @@ local on_attach = function(_, bufnr)
 end
 
 local lsp = require("lspconfig")
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 lsp.clojure_lsp.setup({ on_attach = on_attach, capabilities = capabilities })
 lsp.jdtls.setup({ on_attach = on_attach, capabilities = capabilities })

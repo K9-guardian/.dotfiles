@@ -1,10 +1,5 @@
 local cmp = require("cmp")
 
-if not cmp then
-   print("Could not require module 'cmp'")
-   return
-end
-
 cmp.setup({
    snippet = {
       expand = function(args)

@@ -36,7 +36,6 @@ export GHCUP_USE_XDG_DIRS=true
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
 export WINEPREFIX="$XDG_DATA_HOME/wineprefixes/default"
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
 # }}}
 
 # Programs {{{
