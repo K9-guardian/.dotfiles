@@ -19,6 +19,7 @@ local function close_viewers()
 end
 
 vim.api.nvim_create_augroup("vimtex", {})
+-- TODO: resize zathura
 vim.api.nvim_create_autocmd("User", {
    pattern = "VimtexEventInitPost", group = "vimtex", command = "VimtexCompile"
 })

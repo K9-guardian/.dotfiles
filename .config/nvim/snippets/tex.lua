@@ -7,7 +7,7 @@ return {
       t {
          "\\documentclass{article}",
          "\\usepackage[margin=1in]{geometry}",
-         "\\usepackage{amsmath,amssymb,bm,centernot,dsfont,enumerate,graphicx,stackengine}",
+         "\\usepackage{amsmath,amssymb,bm,centernot,dsfont,enumerate,graphicx,verbatim,stackengine}",
          "\\newcommand{\\N}{\\mathds{N}}",
          "\\newcommand{\\Z}{\\mathds{Z}}",
          "\\newcommand{\\R}{\\mathds{R}}",
