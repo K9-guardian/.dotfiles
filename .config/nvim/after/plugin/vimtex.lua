@@ -10,6 +10,16 @@ vim.g.vimtex_imaps_leader = "@"
 
 vim.g.vimtex_mappings_disable = { i = { "]]" } }
 
+-- TODO: resize zathura
+local function open_viewer()
+   vim.cmd("VimtexCompile")
+   if (os.execute("xdotool --version") == 0 and
+       vim.b.vimtex.viewer.xwin_id and
+       vim.b.vimtex.viewer.xwin_id ~= "0") then
+      os.execute("xdotool windowmove " .. vim.b.vimtex.viewer.xwin_id .. " 50% 100%")
+   end
+end
+
 local function close_viewers()
    if (os.execute("xdotool --version") == 0 and
        vim.b.vimtex.viewer.xwin_id and
@@ -19,7 +29,6 @@ local function close_viewers()
 end
 
 vim.api.nvim_create_augroup("vimtex", {})
--- TODO: resize zathura
 vim.api.nvim_create_autocmd("User", {
    pattern = "VimtexEventInitPost", group = "vimtex", command = "VimtexCompile"
 })
