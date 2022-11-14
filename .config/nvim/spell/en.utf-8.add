@@ -26,3 +26,6 @@ nullspace
 RREF
 orthonormal
 hyperplane
+SVD
+decompositions
+eigenvector

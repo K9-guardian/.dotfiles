@@ -17,7 +17,7 @@ local on_attach = function(_, bufnr)
    vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
    vim.keymap.set("n", "<LocalLeader>rn", vim.lsp.buf.rename, bufopts)
    vim.keymap.set("n", "<LocalLeader>ca", vim.lsp.buf.code_action, bufopts)
-   vim.keymap.set("n", "<LocalLeader>f", vim.lsp.buf.formatting, bufopts)
+   vim.keymap.set("n", "<LocalLeader>f", function() vim.lsp.buf.format({ async = true }) end, bufopts)
 
    vim.api.nvim_create_augroup("lsp_highlight", {})
    vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
@@ -38,7 +38,7 @@ local on_attach = function(_, bufnr)
          if vim.tbl_contains(blacklist, vim.opt.filetype:get()) then
             return
          end
-         vim.lsp.buf.formatting_sync()
+         vim.lsp.buf.format()
       end,
       group = "format_on_save",
    })
