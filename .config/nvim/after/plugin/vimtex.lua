@@ -13,7 +13,6 @@ vim.g.vimtex_mappings_disable = { i = { "]]" } }
 -- MFW can't specify position of viewer in zathurarc
 local function open_viewer()
    local nvim_id = io.popen("xdotool getactivewindow", "r"):read("*a")
-   print(nvim_id)
    vim.cmd("VimtexCompile")
    vim.defer_fn(function() -- Best I could do :p
       if (vim.b.vimtex.viewer.xwin_id and vim.b.vimtex.viewer.xwin_id ~= 0) then
