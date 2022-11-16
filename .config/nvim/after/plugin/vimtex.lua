@@ -10,27 +10,30 @@ vim.g.vimtex_imaps_leader = "@"
 
 vim.g.vimtex_mappings_disable = { i = { "]]" } }
 
--- TODO: resize zathura
+-- MFW can't specify position of viewer in zathurarc
 local function open_viewer()
+   local nvim_id = io.popen("xdotool getactivewindow", "r"):read("*a")
+   print(nvim_id)
    vim.cmd("VimtexCompile")
-   if (os.execute("xdotool --version") == 0 and
-       vim.b.vimtex.viewer.xwin_id and
-       vim.b.vimtex.viewer.xwin_id ~= "0") then
-      os.execute("xdotool windowmove " .. vim.b.vimtex.viewer.xwin_id .. " 50% 100%")
-   end
+   vim.defer_fn(function() -- Best I could do :p
+      if (vim.b.vimtex.viewer.xwin_id and vim.b.vimtex.viewer.xwin_id ~= 0) then
+         os.execute("wmctrl -ir " .. vim.b.vimtex.viewer.xwin_id .. " -b remove,maximized_vert,maximized_horz")
+         os.execute("xdotool windowsize " .. vim.b.vimtex.viewer.xwin_id .. " 50% 100%")
+         os.execute("xdotool windowmove " .. vim.b.vimtex.viewer.xwin_id .. " 50% 100%")
+         os.execute("wmctrl -ia " .. nvim_id)
+      end
+   end, 1000)
 end
 
 local function close_viewers()
-   if (os.execute("xdotool --version") == 0 and
-       vim.b.vimtex.viewer.xwin_id and
-       vim.b.vimtex.viewer.xwin_id ~= "0") then
+   if (vim.b.vimtex.viewer.xwin_id and vim.b.vimtex.viewer.xwin_id ~= 0) then
       os.execute("xdotool windowclose " .. vim.b.vimtex.viewer.xwin_id)
    end
 end
 
 vim.api.nvim_create_augroup("vimtex", {})
 vim.api.nvim_create_autocmd("User", {
-   pattern = "VimtexEventInitPost", group = "vimtex", command = "VimtexCompile"
+   pattern = "VimtexEventInitPost", group = "vimtex", callback = open_viewer
 })
 vim.api.nvim_create_autocmd("User", {
    pattern = "VimtexEventQuit", group = "vimtex", callback = close_viewers
