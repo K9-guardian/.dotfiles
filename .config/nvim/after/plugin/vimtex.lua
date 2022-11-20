@@ -21,7 +21,7 @@ local function open_viewer()
          os.execute("xdotool windowmove " .. vim.b.vimtex.viewer.xwin_id .. " 50% 100%")
          os.execute("wmctrl -ia " .. nvim_id)
       end
-   end, 1000)
+   end, 1500)
 end
 
 local function close_viewers()
