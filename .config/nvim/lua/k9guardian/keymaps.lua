@@ -6,3 +6,5 @@ vim.keymap.set("n", "<Leader>cq", "<Cmd>cclose<CR>", { silent = false })
 
 vim.keymap.set("v", "<Enter>", "<Plug>(EasyAlign)")
 vim.keymap.set("n", "ga", "<Plug>(EasyAlign)")
+
+vim.api.nvim_create_user_command("W", "write", {})
