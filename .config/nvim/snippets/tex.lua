@@ -4,24 +4,33 @@ local function in_mathzone() return vim.fn["vimtex#syntax#in_mathzone"]() == 1 e
 
 return {
    s({ trig = "bgn", name = "Setup document" }, {
+      t(vim.split(
+         io.open(
+            os.getenv("XDG_CONFIG_HOME") .. "/nvim/snippets/preamble.tex",
+            "r"
+         )
+         :read("*a"),
+         "\n"
+      )),
       t {
-         "\\documentclass{article}",
-         "\\usepackage[margin=1in]{geometry}",
-         "\\usepackage{amsmath,amssymb,bm,centernot,dsfont,enumerate,graphicx,verbatim,stackengine}",
-         "\\newcommand{\\N}{\\mathds{N}}",
-         "\\newcommand{\\Z}{\\mathds{Z}}",
-         "\\newcommand{\\R}{\\mathds{R}}",
-         "\\newcommand{\\Q}{\\mathds{Q}}",
-         "\\newcommand{\\C}{\\mathds{C}}",
-         "\\newcommand{\\set}[1]{\\left\\{#1\\right\\}}",
-         "\\newcommand{\\abs}[1]{\\left|#1\\right|}",
-         "\\renewcommand{\\lor}{\\text{ or }}",
-         "\\renewcommand{\\land}{\\text{ and }}",
-         "\\newcommand{\\qmat}[4]{\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}}",
-         "\\newcommand{\\vect}[1]{\\begin{bmatrix} #1 \\end{bmatrix}}",
-         "\\newcommand{\\inprod}[1]{\\left\\langle#1\\right\\rangle}",
-         "\\DeclareMathOperator{\\rank}{rank}",
-         "\\DeclareMathOperator{\\nullity}{nullity}",
+         -- io.open("preamble.tex", "r"):read("*a"),
+         -- "\\documentclass{article}",
+         -- "\\usepackage[margin=1in]{geometry}",
+         -- "\\usepackage{amsmath,amssymb,bm,centernot,dsfont,enumerate,graphicx,verbatim}",
+         -- "\\newcommand{\\N}{\\mathds{N}}",
+         -- "\\newcommand{\\Z}{\\mathds{Z}}",
+         -- "\\newcommand{\\R}{\\mathds{R}}",
+         -- "\\newcommand{\\Q}{\\mathds{Q}}",
+         -- "\\newcommand{\\C}{\\mathds{C}}",
+         -- "\\newcommand{\\set}[1]{\\left\\{#1\\right\\}}",
+         -- "\\newcommand{\\abs}[1]{\\left|#1\\right|}",
+         -- "\\renewcommand{\\lor}{\\text{ or }}",
+         -- "\\renewcommand{\\land}{\\text{ and }}",
+         -- "\\newcommand{\\qmat}[4]{\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}}",
+         -- "\\newcommand{\\vect}[1]{\\begin{bmatrix} #1 \\end{bmatrix}}",
+         -- "\\newcommand{\\inprod}[1]{\\left\\langle#1\\right\\rangle}",
+         -- "\\DeclareMathOperator{\\rank}{rank}",
+         -- "\\DeclareMathOperator{\\nullity}{nullity}",
          "",
          "\\title{",
       }, i(1), t {
@@ -90,6 +99,15 @@ return {
       i(0),
    }, { condition = in_mathzone }),
    s({
+      trig = "([%a%d])bar",
+      regTrig = true,
+      wordTrig = false,
+      name = "Bar"
+   }, {
+      f(function(_, snip) return "\\overline{" .. snip.captures[1] .. "}" end, {}),
+      i(0),
+   }, { condition = in_mathzone }),
+   s({
       trig = "([%a%d])til",
       regTrig = true,
       wordTrig = false,
@@ -110,4 +128,5 @@ return {
    s({ trig = "//", name = "Fraction" }, {
       t("\\frac{"), i(1), t("}{"), i(2), t("}"), i(0)
    }, { condition = in_mathzone }),
+   parse({ trig = "qmat", name = "2 x 2 matrix" }, "\\qmat{$1}{$2}{$3}{$4}$0"),
 }

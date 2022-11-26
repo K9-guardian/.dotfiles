@@ -21,7 +21,7 @@ local function open_viewer()
          os.execute("xdotool windowmove " .. vim.b.vimtex.viewer.xwin_id .. " 50% 100%")
          os.execute("wmctrl -ia " .. nvim_id)
       end
-   end, 1500)
+   end, 1000)
 end
 
 local function close_viewers()
@@ -31,8 +31,11 @@ local function close_viewers()
 end
 
 vim.api.nvim_create_augroup("vimtex", {})
+-- vim.api.nvim_create_autocmd("User", {
+--    pattern = "VimtexEventInitPost", group = "vimtex", callback = open_viewer
+-- })
 vim.api.nvim_create_autocmd("User", {
-   pattern = "VimtexEventInitPost", group = "vimtex", callback = open_viewer
+   pattern = "VimtexEventInitPost", group = "vimtex", command = "VimtexCompile"
 })
 vim.api.nvim_create_autocmd("User", {
    pattern = "VimtexEventQuit", group = "vimtex", callback = close_viewers
