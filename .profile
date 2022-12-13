@@ -2,8 +2,9 @@
 
 # Defaults {{{
 export BROWSER='firefox'
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR=/home/linuxbrew/.linuxbrew/bin/nvim
+export SUDO_EDITOR=/home/linuxbrew/.linuxbrew/bin/nvim
+export VISUAL=/home/linuxbrew/.linuxbrew/bin/nvim
 # }}}
 
 # XDG {{{
@@ -44,6 +45,8 @@ export HOMEBREW_NO_ENV_HINTS=1
 # }}}
 
 # Path {{{
+export PATH
+
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 PATH="$JAVA_HOME/bin:$PATH"
