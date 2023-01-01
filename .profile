@@ -33,6 +33,7 @@ export SQLITE_HISTORY="$XDG_DATA_HOME/sqlite_history"
 export MATLAB_LOG_DIR="$XDG_STATE_HOME/matlab"
 
 export CABAL_DIR="$XDG_CACHE_HOME/cabal"
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
 export GHCUP_USE_XDG_DIRS=true
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
