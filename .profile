@@ -1,10 +1,9 @@
 # vim:foldmethod=marker
 
 # Defaults {{{
-export BROWSER='firefox'
-export EDITOR=/home/linuxbrew/.linuxbrew/bin/nvim
-export SUDO_EDITOR=/home/linuxbrew/.linuxbrew/bin/nvim
-export VISUAL=/home/linuxbrew/.linuxbrew/bin/nvim
+export BROWSER=firefox
+export EDITOR=nvim
+export VISUAL=nvim
 # }}}
 
 # XDG {{{

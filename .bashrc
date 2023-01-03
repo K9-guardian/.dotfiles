@@ -29,7 +29,7 @@ shopt -s globstar
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-[ -f "$XDG_CONFIG_HOME/fzf/fzf.bash" ] && source "$XDG_CONFIG_HOME/fzf/fzf.bash"
+source /usr/share/doc/fzf/examples/key-bindings.bash
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -102,9 +102,7 @@ alias ll='ls -la'
 alias tree='ls -T'
 
 alias ex='nvim -e'
-alias vi='nvim'
 alias view='nvim -R'
-alias vim='nvim'
 alias vimdiff='nvim -d'
 
 alias ..='cd ..'
