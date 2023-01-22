@@ -18,6 +18,7 @@ local on_attach = function(_, bufnr)
    vim.keymap.set("n", "<LocalLeader>rn", vim.lsp.buf.rename, bufopts)
    vim.keymap.set("n", "<LocalLeader>ca", vim.lsp.buf.code_action, bufopts)
    vim.keymap.set("n", "<LocalLeader>f", function() vim.lsp.buf.format({ async = true }) end, bufopts)
+   vim.keymap.set("v", "<LocalLeader>f", function() vim.lsp.buf.format({ async = true }) end, bufopts)
 
    vim.api.nvim_create_augroup("lsp_highlight", {})
    vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
