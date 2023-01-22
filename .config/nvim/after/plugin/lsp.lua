@@ -20,23 +20,34 @@ local on_attach = function(_, bufnr)
    vim.keymap.set("n", "<LocalLeader>f", function() vim.lsp.buf.format({ async = true }) end, bufopts)
    vim.keymap.set("v", "<LocalLeader>f", function() vim.lsp.buf.format({ async = true }) end, bufopts)
 
+   local highlight_blacklist = { "prolog" }
    vim.api.nvim_create_augroup("lsp_highlight", {})
    vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
       buffer = bufnr,
-      callback = function(_) vim.lsp.buf.document_highlight() end,
+      callback = function(_)
+         if vim.tbl_contains(highlight_blacklist, vim.opt.filetype:get()) then
+            return
+         end
+         vim.lsp.buf.document_highlight()
+      end,
       group = "lsp_highlight",
    })
    vim.api.nvim_create_autocmd({ "CursorMoved" }, {
       buffer = bufnr,
-      callback = function(_) vim.lsp.buf.clear_references() end,
+      callback = function(_)
+         if vim.tbl_contains(highlight_blacklist, vim.opt.filetype:get()) then
+            return
+         end
+         vim.lsp.buf.clear_references()
+      end,
       group = "lsp_highlight",
    })
 
-   local blacklist = { "java" }
+   local format_blacklist = { "java" }
    vim.api.nvim_create_augroup("format_on_save", {})
    vim.api.nvim_create_autocmd("BufWritePre", {
       callback = function(_)
-         if vim.tbl_contains(blacklist, vim.opt.filetype:get()) then
+         if vim.tbl_contains(format_blacklist, vim.opt.filetype:get()) then
             return
          end
          vim.lsp.buf.format()
@@ -50,6 +61,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 lsp.clojure_lsp.setup({ on_attach = on_attach, capabilities = capabilities })
 lsp.jdtls.setup({ on_attach = on_attach, capabilities = capabilities })
+lsp.prolog_ls.setup({ on_attach = on_attach, capabilities = capabilities })
 lsp.pyright.setup({ on_attach = on_attach, capabilities = capabilities })
 lsp.racket_langserver.setup {
    on_attach = on_attach,
