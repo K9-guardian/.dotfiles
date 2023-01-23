@@ -1,0 +1,10 @@
+#!/usr/bin/env racket
+#lang racket/base
+(require racket/list
+         racket/string
+         racket/system)
+
+((λ ()
+   (system (string-join (first (shuffle (combinations '("-a" "-l" "-F"))))
+                        #:before-first "/usr/games/sl "))
+   (void)))
