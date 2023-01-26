@@ -90,6 +90,8 @@ fi
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  # alias ls='ls --color=auto'
+
   alias grep='grep --color=auto'
   alias fgrep='fgrep --color=auto'
   alias egrep='egrep --color=auto'
@@ -102,7 +104,9 @@ alias ll='ls -la'
 alias tree='ls -T'
 
 alias ex='nvim -e'
+alias vi='nvim'
 alias view='nvim -R'
+alias vim='nvim'
 alias vimdiff='nvim -d'
 
 alias ..='cd ..'
