@@ -23,6 +23,7 @@ export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export JAVA_HOME="$XDG_DATA_HOME/jdks/temurin-17.0.4.1"
+export NVM_DIR="$HOME/.config/nvm"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export TEXMFHOME="$XDG_DATA_HOME/texmf"
 
@@ -59,5 +60,5 @@ source "$XDG_DATA_HOME/ghcup/env"
 PATH="$HOME/.scripts:$PATH"
 #}}}
 
-# Source .bashrc if running bash
+source "$NVM_DIR/nvm.sh"
 [ -n "$BASH_VERSION" ] && [ -f "$HOME/.bashrc" ] && source "$HOME/.bashrc"
