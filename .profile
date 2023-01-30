@@ -55,11 +55,11 @@ PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
 
 PATH="$XDG_DATA_HOME/jdtls/bin:$PATH"
 PATH="$XDG_DATA_HOME//npm/bin:$PATH"
-source "$XDG_DATA_HOME/cargo/env"
-source "$XDG_DATA_HOME/ghcup/env"
+. "$XDG_DATA_HOME/cargo/env"
+. "$XDG_DATA_HOME/ghcup/env"
 
 PATH="$HOME/.scripts:$PATH"
 #}}}
 
-source "$NVM_DIR/nvm.sh"
-[ -n "$BASH_VERSION" ] && [ -f "$HOME/.bashrc" ] && source "$HOME/.bashrc"
+. "$NVM_DIR/nvm.sh"
+[ -n "$BASH_VERSION" ] && [ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
