@@ -7,9 +7,9 @@ if [ $# -eq 0 ]; then
   usage && exit 1
 fi
 
-if [ $1 = 'add' ]; then
+if [ "$1" = 'add' ]; then
   shift && sed -i '$a\' "$@"
-elif [ $1 = 'remove' ]; then
+elif [ "$1" = 'remove' ]; then
   shift && sed -zi 's/\n$//' "$@"
 else
   usage && exit 1
