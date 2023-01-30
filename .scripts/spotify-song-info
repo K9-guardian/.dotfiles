@@ -1,8 +1,7 @@
 #!/bin/sh
-ARTIST=$(playerctl --player=spotify metadata artist)
+# TODO: Make size/pos independent of screen size, unfocus feh, kill after 3 seconds
 COVER="$XDG_CACHE_HOME/spotify-song-info-album-art.jpeg"
-TITLE=$(playerctl --player=spotify metadata title)
 
 wget -qO "$COVER" $(playerctl --player=spotify metadata mpris:artUrl)
 
-feh --geometry +600+150 --title "$(playerctl metadata --format '{{artist}} - {{title}}')" "$COVER"
+feh --geometry +625+150 --title "$(playerctl metadata --format '{{artist}} - {{title}}')" "$COVER"
