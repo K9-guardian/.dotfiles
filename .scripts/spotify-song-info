@@ -5,4 +5,4 @@ TITLE=$(playerctl --player=spotify metadata title)
 
 wget -qO "$COVER" $(playerctl --player=spotify metadata mpris:artUrl)
 
-feh --geometry +600+150 --draw-tinted "test" --title "$(playerctl metadata --format '{{artist}} - {{title}}')" "$COVER"
+feh --geometry +600+150 --title "$(playerctl metadata --format '{{artist}} - {{title}}')" "$COVER"
