@@ -60,5 +60,4 @@ source "$XDG_DATA_HOME/ghcup/env"
 PATH="$HOME/.scripts:$PATH"
 #}}}
 
-source "$NVM_DIR/nvm.sh"
 [ -n "$BASH_VERSION" ] && [ -f "$HOME/.bashrc" ] && source "$HOME/.bashrc"
