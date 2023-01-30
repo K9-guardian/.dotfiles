@@ -61,5 +61,4 @@ PATH="$XDG_DATA_HOME//npm/bin:$PATH"
 PATH="$HOME/.scripts:$PATH"
 #}}}
 
-. "$NVM_DIR/nvm.sh"
 [ -n "$BASH_VERSION" ] && [ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"

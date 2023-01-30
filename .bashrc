@@ -32,6 +32,7 @@ shopt -s globstar
 source /usr/share/doc/fzf/examples/key-bindings.bash
 source /usr/share/doc/fzf/examples/completion.bash
 
+# source "$NVM_DIR/nvm.sh"
 source "$NVM_DIR/bash_completion"
 
 # set variable identifying the chroot you work in (used in the prompt below)
@@ -111,6 +112,11 @@ alias vi='nvim'
 alias view='nvim -R'
 alias vim='nvim'
 alias vimdiff='nvim -d'
+
+nvm() {
+  source "$NVM_DIR/nvm.sh"
+  nvm "$@"
+}
 
 alias ..='cd ..'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
