@@ -9,6 +9,7 @@ return require("packer").startup(function(use)
 
    -- Vanilla+ {{{
    use "farmergreg/vim-lastplace"
+   use "junegunn/fzf.vim"
    use "junegunn/vim-easy-align"
    use "radenling/vim-dispatch-neovim"
    use "tpope/vim-commentary"
@@ -16,7 +17,6 @@ return require("packer").startup(function(use)
    use "tpope/vim-repeat"
    use "tpope/vim-surround"
    use { "junegunn/fzf", run = function() vim.fn["fzf#install"]() end }
-   use { "junegunn/fzf.vim" }
    -- }}}
 
    -- Programming {{{
