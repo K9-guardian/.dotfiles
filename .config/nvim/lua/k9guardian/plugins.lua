@@ -4,7 +4,7 @@ return require("packer").startup(function(use)
    use "wbthomason/packer.nvim"
    -- Theme {{{
    use "folke/tokyonight.nvim"
-   use "p00f/nvim-ts-rainbow"
+   use "HiPhish/nvim-ts-rainbow2"
    -- }}}
 
    -- Vanilla+ {{{
