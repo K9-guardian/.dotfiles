@@ -21,9 +21,9 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export TEXMFCONFIG="$XDG_CONFIG_HOME/texlive/texmf-config"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 
+export JULIA_DEPOT_PATH="$XDG_DATA_HOME/julia:$JULIA_DEPOT_PATH"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export JAVA_HOME="$XDG_DATA_HOME/jdks/temurin-17.0.4.1"
-export NVM_DIR="$HOME/.config/nvm"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export TEXMFHOME="$XDG_DATA_HOME/texmf"
 
@@ -53,10 +53,11 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 PATH="$JAVA_HOME/bin:$PATH"
 PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
 
-PATH="$XDG_DATA_HOME/jdtls/bin:$PATH"
-PATH="$XDG_DATA_HOME//npm/bin:$PATH"
 . "$XDG_DATA_HOME/cargo/env"
 . "$XDG_DATA_HOME/ghcup/env"
+PATH="$XDG_DATA_HOME/jdtls/bin:$PATH"
+PATH="$XDG_DATA_HOME/julia/bin:$PATH"
+PATH="$XDG_DATA_HOME/npm/bin:$PATH"
 
 PATH="$HOME/.scripts:$PATH"
 #}}}

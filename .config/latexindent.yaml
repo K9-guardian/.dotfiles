@@ -70,6 +70,8 @@ modifyLineBreaks:
   oneSentencePerLine:
     manipulateSentences: 1
     removeSentenceLineBreaks: 0
+    sentencesEndWith:
+      exclamationMark: 0
 
 fineTuning:
   modifyLineBreaks:
