@@ -60,6 +60,11 @@ local lsp = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 lsp.clojure_lsp.setup({ on_attach = on_attach, capabilities = capabilities })
+lsp.hls.setup {
+   on_attach = on_attach,
+   capabilities = capabilities,
+   filetypes = { "haskell", "lhaskell", "cabal" }
+}
 lsp.jdtls.setup({ on_attach = on_attach, capabilities = capabilities })
 lsp.julials.setup({ on_attach = on_attach, capabilities = capabilities })
 lsp.prolog_ls.setup({ on_attach = on_attach, capabilities = capabilities })
