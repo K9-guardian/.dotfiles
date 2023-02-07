@@ -59,6 +59,7 @@ PATH="$XDG_DATA_HOME/jdtls/bin:$PATH"
 PATH="$XDG_DATA_HOME/julia/bin:$PATH"
 PATH="$XDG_DATA_HOME/npm/bin:$PATH"
 
+PATH="$HOME/.local/kitty.app/bin:$PATH"
 PATH="$HOME/.scripts:$PATH"
 #}}}
 
