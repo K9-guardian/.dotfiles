@@ -6,7 +6,7 @@ return {
    s({ trig = "bgn", name = "Setup document" }, {
       t(vim.split(
          io.open(
-            os.getenv("XDG_CONFIG_HOME") .. "/nvim/snippets/preamble.tex",
+            os.getenv("XDG_CONFIG_HOME") .. "/nvim/snippets/preamble",
             "r"
          )
          :read("*a"),
