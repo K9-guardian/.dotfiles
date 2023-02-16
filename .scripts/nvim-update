@@ -1,0 +1,22 @@
+#!/bin/sh
+NVIM="$HOME/.local/bin/nvim"
+
+nvim_version() {
+  "$1" -v | head -1 | cut -d 'v' -f 2
+}
+
+cd /tmp || exit
+
+echo 'Downloading neovim.'
+wget -qnc https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
+echo 'Downloading checksum.'
+wget -qnc https://github.com/neovim/neovim/releases/download/stable/nvim.appimage.sha256sum
+
+if sha256sum --quiet --c nvim.appimage.sha256sum; then
+  echo 'Checksum matches. Updating neovim.'
+  chmod +x nvim.appimage
+  echo "$(nvim_version "$NVIM") -> $(nvim_version ./nvim.appimage)"
+  mv nvim.appimage "$NVIM" && exit 0
+else
+  echo 'Checksum does not match. Please try again.' && exit 1
+fi
