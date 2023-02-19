@@ -1,0 +1,6 @@
+#!/bin/sh
+COVER="$XDG_CACHE_HOME/spotify-song-info-album-art.jpeg"
+
+wget -qO "$COVER" $(playerctl --player=spotify metadata mpris:artUrl)
+
+feh --geometry +625+150 --title "$(playerctl --player=spotify metadata --format '{{title}} - {{artist}}')" "$COVER"

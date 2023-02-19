@@ -1,7 +1,8 @@
 #!/bin/sh
-# TODO: Make size/pos independent of screen size, unfocus feh, kill after 3 seconds
-COVER="$XDG_CACHE_HOME/spotify-song-info-album-art.jpeg"
+MSG="$(playerctl --player=spotify metadata --format '{{title}} - {{artist}}')"
 
-wget -qO "$COVER" $(playerctl --player=spotify metadata mpris:artUrl)
-
-feh --geometry +625+150 --title "$(playerctl --player=spotify metadata --format '{{title}} - {{artist}}')" "$COVER"
+if [ -n "$MSG" ]; then
+  echo "$MSG"
+else
+  echo "​"
+fi
