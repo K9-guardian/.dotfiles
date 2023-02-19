@@ -75,7 +75,7 @@ lsp.rust_analyzer.setup {
    capabilities = capabilities,
    settings = { ["rust-analyzer"] = {} },
 }
-lsp.sumneko_lua.setup {
+lsp.lua_ls.setup {
    on_attach = on_attach,
    capabilities = capabilities,
    settings = {
