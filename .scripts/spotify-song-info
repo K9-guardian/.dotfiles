@@ -1,8 +1,0 @@
-#!/bin/sh
-MSG="$(playerctl --player=spotify metadata --format '{{title}} - {{artist}}')"
-
-if [ -n "$MSG" ]; then
-  echo "$MSG"
-else
-  echo "​"
-fi
