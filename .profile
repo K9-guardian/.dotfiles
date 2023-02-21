@@ -2,8 +2,8 @@
 
 # Defaults {{{
 export BROWSER=/usr/bin/firefox
-export EDITOR="$HOME/.local/bin/nvim"
-export VISUAL="$HOME/.local/bin/nvim"
+export EDITOR=nvim
+export VISUAL=nvim
 # }}}
 
 # XDG {{{
