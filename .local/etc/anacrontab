@@ -1,3 +1,0 @@
-HOME=/home/k9guardian
-
-1 0 cron.daily run-parts --report $HOME/.local/etc/cron.daily
