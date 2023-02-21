@@ -63,6 +63,4 @@ PATH="$HOME/.local/kitty.app/bin:$PATH"
 PATH="$HOME/.scripts:$PATH"
 #}}}
 
-anacron -t "$HOME/.local/etc/anacrontab" -S "$HOME/.var/spool/anacron"
-
 [ -n "$BASH_VERSION" ] && [ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
