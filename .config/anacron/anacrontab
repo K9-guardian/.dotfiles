@@ -1,0 +1,3 @@
+HOME=/home/k9guardian
+
+1 0 cron.daily run-parts --report $HOME/.config/anacron/cron.daily
