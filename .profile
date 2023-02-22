@@ -43,6 +43,7 @@ export WINEPREFIX="$XDG_DATA_HOME/wineprefixes/default"
 # Programs {{{
 export FZF_DEFAULT_COMMAND='rg --files'
 export HOMEBREW_NO_ENV_HINTS=1
+export LOCATE_PATH="$XDG_DATA_HOME/plocate.db"
 # }}}
 
 # Path {{{
