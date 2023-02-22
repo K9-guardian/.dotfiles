@@ -59,6 +59,7 @@ PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
 PATH="$XDG_DATA_HOME/jdtls/bin:$PATH"
 PATH="$XDG_DATA_HOME/julia/bin:$PATH"
 PATH="$XDG_DATA_HOME/npm/bin:$PATH"
+PATH="$XDG_DATA_HOME/scryer-prolog/target/release:$PATH"
 
 PATH="$HOME/.local/kitty.app/bin:$PATH"
 PATH="$HOME/.scripts:$PATH"
