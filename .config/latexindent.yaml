@@ -94,12 +94,4 @@ fineTuning:
         )                                 #
       )                                   # 
       \.(?:\\\]|)                         # .\]|.
-      (?!                                 # not *followed by*
-        (?:                               #
-          [a-zA-Z0-9-~,]                  #
-          |                               #
-          \),                             # ),
-          |                               #
-          \)\.                            # ).
-        )                                 #
-      )                                   #
+      \s                                  # followed by space
