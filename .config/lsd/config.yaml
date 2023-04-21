@@ -1,0 +1,11 @@
+icons:
+  separator: "  "
+
+blocks:
+  - permission
+  - user
+  - size
+  - date
+  - name
+
+date: "+%b %d %l:%m %p"

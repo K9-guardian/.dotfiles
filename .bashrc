@@ -98,11 +98,10 @@ if [ -x /usr/bin/dircolors ]; then
   alias egrep='egrep --color=auto'
 fi
 
-export EXA_ICON_SPACING=2
-alias ls='exa --group-directories-first --icons --color-scale'
+alias ls='lsd --group-directories-first'
 alias la='ls -a'
 alias ll='ls -la'
-alias tree='ls -T'
+alias tree='ls --tree'
 
 alias ex='nvim -e'
 alias vi='nvim'
@@ -111,6 +110,7 @@ alias vim='nvim'
 alias vimdiff='nvim -d'
 
 alias ..='cd ..'
+alias cat='bat'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias gr='cd "$(git rev-parse --show-toplevel)"'
 alias icat='kitten icat --align left'
