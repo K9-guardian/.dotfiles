@@ -8,4 +8,4 @@ blocks:
   - date
   - name
 
-date: "+%b %d %I:%m %p"
+date: "+%b %d %I:%M %p"
