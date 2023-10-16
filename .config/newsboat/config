@@ -1,6 +1,11 @@
 # auto relaod
 auto-reload yes
 
+urls-source "freshrss"
+freshrss-url "https://feeds.flossboxin.org.in/p/api/greader.php"
+freshrss-login "k9_"
+freshrss-passwordfile "/home/k9guardian/.local/state/newsboat/freshrss-passwordfile"
+
 # vim keybinds
 unbind-key j
 unbind-key k
