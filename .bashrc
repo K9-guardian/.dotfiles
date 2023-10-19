@@ -118,4 +118,4 @@ alias gr='cd "$(git rev-parse --show-toplevel)"'
 alias icat='kitten icat --align left'
 alias ssh='kitty +kitten ssh'
 
-alias irc='ssh -i "$HOME/.local/state/aws/id_rsa.pem" ubuntu@ec2-54-183-23-231.us-west-1.compute.amazonaws.com -t tmux new-session -A -s main'
+alias irc='ssh -i "$HOME/.local/state/aws/id_rsa.pem" ec2-user@ec2-54-183-85-74.us-west-1.compute.amazonaws.com -t sudo docker attach weechat'
