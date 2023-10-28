@@ -1,2 +1,4 @@
 .config/nvim/spell/en.utf-8.add.spl
 .config/nvim/plugin/
+
+.config/weechat/sec.conf
