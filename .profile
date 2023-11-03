@@ -21,9 +21,10 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export TEXMFCONFIG="$XDG_CONFIG_HOME/texlive/texmf-config"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 
-export JULIA_DEPOT_PATH="$XDG_DATA_HOME/julia:$JULIA_DEPOT_PATH"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export DVDCSS_CACHE="$XDG_DATA_HOME/dvdcss"
 export JAVA_HOME="$XDG_DATA_HOME/jdks/temurin-17.0.4.1"
+export JULIA_DEPOT_PATH="$XDG_DATA_HOME/julia:$JULIA_DEPOT_PATH"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export TEXMFHOME="$XDG_DATA_HOME/texmf"
 
