@@ -42,7 +42,7 @@ local on_attach = function(_, bufnr)
       group = "lsp_highlight",
    })
 
-   local format_blacklist = { "java" }
+   local format_blacklist = { "haskell", "java" }
    vim.api.nvim_create_augroup("format_on_save", {})
    vim.api.nvim_create_autocmd("BufWritePre", {
       callback = function(_)
