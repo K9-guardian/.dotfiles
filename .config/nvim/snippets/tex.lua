@@ -16,10 +16,10 @@ return {
          "",
          "\\title{",
       }, i(1), t {
-         "}",
-         "\\author{Krishna Girkar A16674208}",
-         "\\date{",
-      },
+      "}",
+      "\\author{Krishna Girkar A16674208}",
+      "\\date{",
+   },
       f(function() return os.date("%B %d, %Y") end, {}),
       t {
          "}",
@@ -30,10 +30,10 @@ return {
          "",
          "",
       }, i(0), t {
-         "",
-         "",
-         "\\end{document}",
-      },
+      "",
+      "",
+      "\\end{document}",
+   },
    }),
    parse({ trig = "beg", name = "Insert new environment" }, "\\begin{$1}\n\t$0\n\\end{$1}"),
    parse({ trig = "im", name = "Inline math" }, "\\($1\\)$0"),
@@ -60,6 +60,17 @@ return {
    }, {
       f(function(_, snip)
          return string.format("%s_{%s}", snip.captures[1], snip.captures[2])
+      end, {}),
+      i(0),
+   }, { condition = in_mathzone }),
+   s({
+      trig = "([%a}])^(%d%d)",
+      regTrig = true,
+      wordTrig = false,
+      name = "Superscript 2"
+   }, {
+      f(function(_, snip)
+         return string.format("%s^{%s}", snip.captures[1], snip.captures[2])
       end, {}),
       i(0),
    }, { condition = in_mathzone }),
