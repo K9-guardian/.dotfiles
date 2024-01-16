@@ -9,6 +9,10 @@ local on_attach = function(_, bufnr)
    local bufopts = { buffer = bufnr }
 
    vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
+   vim.keymap.set("n", "<C-w><C-d>", function()
+      vim.cmd("vsplit")
+      vim.lsp.buf.definition()
+   end, bufopts)
    vim.keymap.set("n", "<C-w>d", function()
       vim.cmd("vsplit")
       vim.lsp.buf.definition()
