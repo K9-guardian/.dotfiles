@@ -7,4 +7,5 @@ set window-height 10000
 set window-width 10000
 
 map d scroll half-down
+map p toggle_page_mode
 map u scroll half-up
