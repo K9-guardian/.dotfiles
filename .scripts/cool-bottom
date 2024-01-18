@@ -1,0 +1,2 @@
+#!/bin/sh
+sudo smbios-thermal-ctl --set-thermal-mode cool-bottom
