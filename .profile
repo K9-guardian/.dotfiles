@@ -35,7 +35,6 @@ export MATLAB_LOG_DIR="$XDG_STATE_HOME/matlab"
 
 export CABAL_DIR="$XDG_CACHE_HOME/cabal"
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
-export GHCUP_USE_XDG_DIRS=true
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
 export WINEPREFIX="$XDG_DATA_HOME/wineprefixes/default"
@@ -50,18 +49,18 @@ export LOCATE_PATH="$XDG_DATA_HOME/plocate.db"
 # Path {{{
 export PATH
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 PATH="$JAVA_HOME/bin:$PATH"
 PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
 
-. "$XDG_DATA_HOME/cargo/env"
-. "$XDG_DATA_HOME/ghcup/env"
+[ -f "$XDG_DATA_HOME/cargo/env" ] && . "$XDG_DATA_HOME/cargo/env"
 PATH="$XDG_DATA_HOME/jdtls/bin:$PATH"
 PATH="$XDG_DATA_HOME/julia/bin:$PATH"
 PATH="$XDG_DATA_HOME/npm/bin:$PATH"
 PATH="$XDG_DATA_HOME/scryer-prolog/target/release:$PATH"
 
+[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
 PATH="$HOME/.local/kitty.app/bin:$PATH"
 PATH="$HOME/.scripts:$PATH"
 #}}}

@@ -29,10 +29,12 @@ shopt -s globstar
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-source /usr/share/doc/fzf/examples/key-bindings.bash
-source /usr/share/doc/fzf/examples/completion.bash
+if [ -x /usr/bin/fzf ]; then
+  source /usr/share/doc/fzf/examples/key-bindings.bash
+  source /usr/share/doc/fzf/examples/completion.bash
+fi
 
-source /usr/share/bash-completion/completions/git
+[ -x /usr/bin/git ] && source /usr/share/bash-completion/completions/git
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -100,20 +102,25 @@ if [ -x /usr/bin/dircolors ]; then
   alias egrep='egrep --color=auto'
 fi
 
-alias ls='lsd --group-directories-first'
-alias la='ls -a'
-alias ll='ls -la'
-alias tree='ls --tree'
+if [ -x "$XDG_DATA_HOME/cargo/bin/lsd" ]; then
+  alias ls='lsd --group-directories-first'
+  alias la='ls -a'
+  alias ll='ls -la'
+  alias tree='ls --tree'
+fi
 
-alias ex='nvim -e'
-alias vi='nvim'
-alias view='nvim -R'
-alias vim='nvim'
-alias vimdiff='nvim -d'
+if [ -x /usr/bin/nvim ]; then
+  alias ex='nvim -e'
+  alias vi='nvim'
+  alias view='nvim -R'
+  alias vim='nvim'
+  alias vimdiff='nvim -d'
+fi
+
+[ -x /usr/bin/bat ] && alias cat='bat'
+[ -x "$HOME/.local/kitty.app/bin/kitten" ] && alias icat='kitten icat --align left'
+[ -x "$HOME/.local/kitty.app/bin/kitty"  ] && alias ssh='kitty +kitten ssh'
 
 alias ..='cd ..'
-alias cat='bat'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias gr='cd "$(git rev-parse --show-toplevel)"'
-alias icat='kitten icat --align left'
-alias ssh='kitty +kitten ssh'
