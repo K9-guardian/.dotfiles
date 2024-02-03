@@ -62,6 +62,7 @@ PATH="$XDG_DATA_HOME/scryer-prolog/target/release:$PATH"
 
 [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
 PATH="$HOME/.local/kitty.app/bin:$PATH"
+PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/.scripts:$PATH"
 #}}}
 
