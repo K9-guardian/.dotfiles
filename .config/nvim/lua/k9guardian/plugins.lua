@@ -16,6 +16,7 @@ return require("packer").startup(function(use)
    use "tpope/vim-dispatch"
    use "tpope/vim-repeat"
    use "tpope/vim-surround"
+   use "tpope/vim-fugitive"
    use { "junegunn/fzf", run = function() vim.fn["fzf#install"]() end }
    -- }}}
 
