@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<C-p>", "<Cmd>Files<CR>")
+vim.keymap.set("n", "<C-p>", require("fzf-lua").files)
 
 vim.keymap.set("n", "]q", "<Cmd>cnext<CR>")
 vim.keymap.set("n", "[q", "<Cmd>cprevious<CR>")

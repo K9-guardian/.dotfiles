@@ -3,32 +3,31 @@
 return require("packer").startup(function(use)
    use "wbthomason/packer.nvim"
    -- Theme {{{
-   use "folke/tokyonight.nvim"
    use "HiPhish/nvim-ts-rainbow2"
+   use "folke/tokyonight.nvim"
    -- }}}
 
    -- Vanilla+ {{{
    use "farmergreg/vim-lastplace"
-   use "junegunn/fzf.vim"
    use "junegunn/vim-easy-align"
    use "radenling/vim-dispatch-neovim"
    use "tpope/vim-commentary"
    use "tpope/vim-dispatch"
+   use "tpope/vim-fugitive"
    use "tpope/vim-repeat"
    use "tpope/vim-surround"
-   use "tpope/vim-fugitive"
-   use { "junegunn/fzf", run = function() vim.fn["fzf#install"]() end }
+   use { "ibhagwan/fzf-lua", requires = { "nvim-tree/nvim-web-devicons" } }
    -- }}}
 
    -- Programming {{{
-   use "Olical/conjure"
-   use "neovim/nvim-lspconfig"
    use "L3MON4D3/LuaSnip"
+   use "Olical/conjure"
    use "hrsh7th/cmp-buffer"
    use "hrsh7th/cmp-cmdline"
    use "hrsh7th/cmp-nvim-lsp"
    use "hrsh7th/cmp-path"
    use "hrsh7th/nvim-cmp"
+   use "neovim/nvim-lspconfig"
    use "saadparwaiz1/cmp_luasnip"
    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
    -- }}}
