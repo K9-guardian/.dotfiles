@@ -13,7 +13,7 @@ local function open_viewer()
    local viewer_opened = vim.b.vimtex.viewer.xwin_id and vim.b.vimtex.viewer.xwin_id ~= 0
 
    vim.cmd("VimtexView")
-
+   vim.cmd("sleep")
    if (not viewer_opened) then
       os.execute("wmctrl -ir " .. vim.b.vimtex.viewer.xwin_id .. " -b remove,maximized_vert,maximized_horz")
       os.execute("xdotool windowsize " .. vim.b.vimtex.viewer.xwin_id .. " 50% 100%")
@@ -30,9 +30,6 @@ local function close_viewer()
 end
 
 vim.api.nvim_create_augroup("vimtex", {})
-vim.api.nvim_create_autocmd("User", {
-   pattern = "VimtexEventInitPost", group = "vimtex", command = "VimtexCompile"
-})
 vim.api.nvim_create_autocmd("User", {
    pattern = "VimtexEventCompileSuccess", group = "vimtex", callback = open_viewer
 })
