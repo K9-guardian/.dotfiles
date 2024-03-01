@@ -118,6 +118,7 @@ if [ -x /usr/bin/nvim ]; then
 fi
 
 [ -x /usr/bin/bat ] && alias cat='bat'
+[ -x /usr/bin/zoxide ] && eval "$(zoxide init --cmd cd bash)"
 [ -x "$HOME/.local/kitty.app/bin/kitten" ] && alias icat='kitten icat --align left'
 [ -x "$HOME/.local/kitty.app/bin/kitty"  ] && alias ssh='kitty +kitten ssh'
 
