@@ -66,7 +66,7 @@ lsp.clojure_lsp.setup({ on_attach = on_attach, capabilities = capabilities })
 lsp.hls.setup {
    on_attach = on_attach,
    capabilities = capabilities,
-   filetypes = { "haskell", "lhaskell", "cabal" }
+   filetypes = { "haskell", "lhaskell" }
 }
 lsp.jdtls.setup({ on_attach = on_attach, capabilities = capabilities })
 lsp.julials.setup({ on_attach = on_attach, capabilities = capabilities })
