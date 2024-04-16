@@ -55,6 +55,7 @@ PATH="$JAVA_HOME/bin:$PATH"
 PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
 
 [ -f "$XDG_DATA_HOME/cargo/env" ] && . "$XDG_DATA_HOME/cargo/env"
+PATH="$XDG_DATA_HOME/ispc/bin:$PATH"
 PATH="$XDG_DATA_HOME/jdtls/bin:$PATH"
 PATH="$XDG_DATA_HOME/julia/bin:$PATH"
 PATH="$XDG_DATA_HOME/npm/bin:$PATH"
