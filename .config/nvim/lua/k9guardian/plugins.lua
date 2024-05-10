@@ -10,6 +10,7 @@ return require("packer").startup(function(use)
    -- Vanilla+ {{{
    use "farmergreg/vim-lastplace"
    use "junegunn/vim-easy-align"
+   use "michaeljsmith/vim-indent-object"
    use "radenling/vim-dispatch-neovim"
    use "tpope/vim-commentary"
    use "tpope/vim-dispatch"
