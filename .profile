@@ -35,6 +35,7 @@ export MATLAB_LOG_DIR="$XDG_STATE_HOME/matlab"
 
 export CABAL_DIR="$XDG_CACHE_HOME/cabal"
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
+export HOUDINI_USER_PREF_DIR="$XDG_CACHE_HOME/houdini__HVER__"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
 export WINEPREFIX="$XDG_DATA_HOME/wineprefixes/default"
