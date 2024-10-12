@@ -1,0 +1,3 @@
+#!/bin/sh
+PRIVATE_KEY="$HOME/Documents/UCSD/kgirkar.pem"
+ssh -i "$PRIVATE_KEY" -o StrictHostKeyChecking=no -o LogLevel=ERROR ubuntu@"$@"
