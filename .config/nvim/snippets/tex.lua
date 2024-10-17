@@ -38,6 +38,15 @@ return {
    parse({ trig = "beg", name = "Insert new environment" }, "\\begin{$1}\n\t$0\n\\end{$1}"),
    parse({ trig = "im", name = "Inline math" }, "\\($1\\)$0"),
    parse({ trig = "dm", name = "Display math" }, "\\[$1\\]$0"),
+   s({ trig = "sr", wordTrig = false, name = "Squared" }, {
+      t("^2"), i(0)
+   }, { condition = in_mathzone }),
+   s({ trig = "cb", wordTrig = false, name = "Cubed" }, {
+      t("^3"), i(0)
+   }, { condition = in_mathzone }),
+   s({ trig = "inv", wordTrig = false, name = "Inverse" }, {
+      t("^{-1}")
+   }, { condition = in_mathzone }),
    s({ trig = "i", name = "Insert new item" }, { t("\\item ") }),
    s({ trig = "p", name = "Insert new item page" }, { t({ "\\clearpage", "\\item " }) }),
 }, {
@@ -115,15 +124,6 @@ return {
    }, { condition = in_mathzone }),
    s({ trig = "^^", wordTrig = false, name = "Superscript" }, {
       t("^{"), i(1), t("}"), i(0)
-   }, { condition = in_mathzone }),
-   s({ trig = "sr", wordTrig = false, name = "Squared" }, {
-      t("^2"), i(0)
-   }, { condition = in_mathzone }),
-   s({ trig = "cb", wordTrig = false, name = "Cubed" }, {
-      t("^3"), i(0)
-   }, { condition = in_mathzone }),
-   s({ trig = "inv", wordTrig = false, name = "Inverse" }, {
-      t("^{-1}")
    }, { condition = in_mathzone }),
    s({ trig = "//", name = "Fraction" }, {
       t("\\frac{"), i(1), t("}{"), i(2), t("}"), i(0)
