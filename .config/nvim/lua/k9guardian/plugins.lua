@@ -3,7 +3,7 @@
 return require("packer").startup(function(use)
    use "wbthomason/packer.nvim"
    -- Theme {{{
-   use "HiPhish/nvim-ts-rainbow2"
+   use "HiPhish/rainbow-delimiters.nvim"
    use "folke/tokyonight.nvim"
    -- }}}
 

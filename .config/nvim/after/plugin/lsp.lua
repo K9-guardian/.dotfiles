@@ -103,4 +103,4 @@ lsp.texlab.setup {
       },
    },
 }
-lsp.tsserver.setup({ on_attach = on_attach, capabilities = capabilities })
+lsp.ts_ls.setup({ on_attach = on_attach, capabilities = capabilities })
