@@ -38,15 +38,6 @@ return {
    parse({ trig = "beg", name = "Insert new environment" }, "\\begin{$1}\n\t$0\n\\end{$1}"),
    parse({ trig = "im", name = "Inline math" }, "\\($1\\)$0"),
    parse({ trig = "dm", name = "Display math" }, "\\[$1\\]$0"),
-   s({ trig = "sr", wordTrig = false, name = "Squared" }, {
-      t("^2"), i(0)
-   }, { condition = in_mathzone }),
-   s({ trig = "cb", wordTrig = false, name = "Cubed" }, {
-      t("^3"), i(0)
-   }, { condition = in_mathzone }),
-   s({ trig = "inv", wordTrig = false, name = "Inverse" }, {
-      t("^{-1}")
-   }, { condition = in_mathzone }),
    s({ trig = "i", name = "Insert new item" }, { t("\\item ") }),
    s({ trig = "p", name = "Insert new item page" }, { t({ "\\clearpage", "\\item " }) }),
 }, {
@@ -118,6 +109,15 @@ return {
    }, {
       f(function(_, snip) return "\\tilde{" .. snip.captures[1] .. "}" end, {}),
       i(0),
+   }, { condition = in_mathzone }),
+   s({ trig = "srd", wordTrig = false, name = "Squared" }, {
+      t("^2"), i(0)
+   }, { condition = in_mathzone }),
+   s({ trig = "cbd", wordTrig = false, name = "Cubed" }, {
+      t("^3"), i(0)
+   }, { condition = in_mathzone }),
+   s({ trig = "inv", wordTrig = false, name = "Inverse" }, {
+      t("^{-1}")
    }, { condition = in_mathzone }),
    s({ trig = "__", wordTrig = false, name = "Subscript" }, {
       t("_{"), i(1), t("}"), i(0)

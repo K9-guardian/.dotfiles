@@ -1,7 +1,12 @@
 local luasnip = require("luasnip")
 luasnip.config.setup({ enable_autosnippets = true })
 
-vim.keymap.set({ "i", "s" }, "jk", function() luasnip.jump(1) end)
+vim.keymap.set({ "i", "s" }, "<Tab>", function()
+   if luasnip.jumpable(1) then luasnip.jump(1) end
+end)
+vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
+   if luasnip.jumpable(-1) then luasnip.jump(-1) end
+end)
 
 require("luasnip.loaders.from_lua").lazy_load({ paths = "./snippets" })
 
