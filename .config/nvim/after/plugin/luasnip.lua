@@ -1,9 +1,9 @@
 local luasnip = require("luasnip")
 luasnip.config.setup({ enable_autosnippets = true })
 
-vim.keymap.set({ "i", "s" }, "<Tab>", function()
-   if luasnip.jumpable(1) then luasnip.jump(1) else return "<Tab>" end
-end, { expr = true })
+vim.keymap.set({ "i" }, "<Tab>", function()
+   if luasnip.jumpable(1) then luasnip.jump(1) end
+end)
 vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
    if luasnip.jumpable(-1) then luasnip.jump(-1) end
 end)
