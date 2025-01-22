@@ -2,9 +2,6 @@
 <keys
    name="User Shortcuts">
   <bind
-     gaction="app.object-set-clip"
-     keys="&lt;Shift&gt;c" />
-  <bind
      gaction="win.canvas-display-mode-toggle"
      keys="&lt;Primary&gt;3" />
 </keys>

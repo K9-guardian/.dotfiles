@@ -4,10 +4,15 @@ indentAfterItems:
   itemize: 0
   enumerate: 0
 
+noIndent:
+  verbatim: 1
+  verbatim*: 1
+
 noAdditionalIndent:
   center: 1
   displayMath: 1
   inlineMath: 1
+  multicols*: 1
   rSection: 1
 
 lookForAlignDelims:
