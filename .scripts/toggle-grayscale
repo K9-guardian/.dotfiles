@@ -1,0 +1,12 @@
+#!/bin/sh
+if [ ! -f "$HOME/.local/state/grayscale_status" ]; then
+  touch "$HOME/.local/state/grayscale_status" 
+fi
+
+if [ -s "$HOME/.local/state/grayscale_status" ]; then
+  > "$HOME/.local/state/grayscale_status"
+else
+  echo "1" > "$HOME/.local/state/grayscale_status"
+fi
+
+xdotool mousemove 1920 1080 click 1 mousemove restore
