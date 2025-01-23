@@ -9,3 +9,7 @@ set window-width 10000
 map d scroll half-down
 map p toggle_page_mode
 map u scroll half-up
+
+map [fullscreen] d scroll half-down
+map [fullscreen] p toggle_page_mode
+map [fullscreen] u scroll half-up
