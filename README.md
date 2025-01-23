@@ -1,0 +1,3 @@
+# Dotfiles
+
+Usage: `stow --dotfiles .`
