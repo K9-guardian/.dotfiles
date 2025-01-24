@@ -1,4 +1,5 @@
-.config/nvim/spell/en.utf-8.add.spl
-.config/nvim/plugin/
+dot-config/nvim/spell/en.utf-8.add.spl
+dot-config/nvim/plugin/
+dot-config/nvim/plugin/packer_compiled.lua
 
-.config/weechat/sec.conf
+dot-config/weechat/sec.conf
