@@ -27,6 +27,8 @@ return require("packer").startup(function(use)
    use "hrsh7th/cmp-cmdline"
    use "hrsh7th/cmp-nvim-lsp"
    use "hrsh7th/cmp-path"
+   use "williamboman/mason.nvim"
+   use "williamboman/mason-lspconfig.nvim"
    use "hrsh7th/nvim-cmp"
    use "neovim/nvim-lspconfig"
    use "saadparwaiz1/cmp_luasnip"
@@ -39,5 +41,6 @@ return require("packer").startup(function(use)
    use "fladson/vim-kitty"
    use "lervag/vimtex"
    use "wlangstroth/vim-racket"
+   use { "chomosuke/typst-preview.nvim", tag = 'v1.*' }
    -- }}}
 end)

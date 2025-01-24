@@ -59,6 +59,22 @@ local on_attach = function(_, bufnr)
    })
 end
 
+require("mason").setup()
+require("mason-lspconfig").setup {
+   automatic_installation = true,
+   -- TODO: Figure out good extensions for python and typescript
+   ensure_installed = {
+      "clojure_lsp",
+      -- "hls",
+      "jdtls",
+      "julials",
+      "lua_ls",
+      "rust_analyzer",
+      "texlab",
+      "tinymist"
+   }
+}
+
 local lsp = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -102,5 +118,12 @@ lsp.texlab.setup {
          latexindent = { modifyLineBreaks = true },
       },
    },
+}
+lsp.tinymist.setup {
+   settings = {
+      formatterMode = "typstyle",
+      exportPdf = "onType",
+      semanticTokens = "disable"
+   }
 }
 lsp.ts_ls.setup({ on_attach = on_attach, capabilities = capabilities })
