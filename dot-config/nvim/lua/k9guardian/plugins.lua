@@ -41,6 +41,7 @@ return require("packer").startup(function(use)
    use "fladson/vim-kitty"
    use "lervag/vimtex"
    use "wlangstroth/vim-racket"
+   use "kaarmu/typst.vim"
    use { "chomosuke/typst-preview.nvim", tag = 'v1.*' }
    -- }}}
 end)
