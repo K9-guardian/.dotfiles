@@ -125,4 +125,4 @@ fi
 alias ..='cd ..'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias gr='cd "$(git rev-parse --show-toplevel)"'
-alias ucsdvpn='pass ucsd/kgirkar 2>/dev/null | sudo openconnect --authgroup="2-Step Secured - allthruucsd" --user=kgirkar --passwd-on-stdin vpn.ucsd.edu'
+alias vpnucsd='pass ucsd/kgirkar 2>/dev/null | sudo openconnect --authgroup="2-Step Secured - allthruucsd" --user=kgirkar --passwd-on-stdin vpn.ucsd.edu'
