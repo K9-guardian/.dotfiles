@@ -1,2 +1,2 @@
 #!/bin/sh
-rclone sync $HOME/Documents/Books Drive:Backups/Books
+rclone copy $HOME/Documents/Books Drive:Backups/Books

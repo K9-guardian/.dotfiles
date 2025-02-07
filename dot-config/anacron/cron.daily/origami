@@ -1,2 +1,2 @@
 #!/bin/sh
-rclone sync $HOME/Pictures/Origami Drive:Backups/Origami
+rclone copy $HOME/Pictures/Origami Drive:Backups/Origami

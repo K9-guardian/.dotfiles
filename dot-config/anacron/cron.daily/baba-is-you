@@ -1,2 +1,2 @@
 #!/bin/sh
-rclone sync $HOME/.local/share/Baba_Is_You/ Drive:Backups/Baba_Is_You
+rclone copy $HOME/.local/share/Baba_Is_You/ Drive:Backups/Baba_Is_You

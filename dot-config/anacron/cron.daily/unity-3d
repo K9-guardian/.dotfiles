@@ -1,2 +1,2 @@
 #!/bin/sh
-rclone sync $HOME/.config/unity3d/ Drive:Backups/unity3d
+rclone copy $HOME/.config/unity3d/ Drive:Backups/unity3d
