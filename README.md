@@ -1,3 +1,7 @@
 # Dotfiles
 
-Usage: `stow --dotfiles .`
+Usage: 
+```
+git-crypt unlock
+stow --dotfiles .
+```
