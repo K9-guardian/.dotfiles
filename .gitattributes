@@ -1,0 +1,1 @@
+dot-config/rclone/** filter=git-crypt diff=git-crypt
