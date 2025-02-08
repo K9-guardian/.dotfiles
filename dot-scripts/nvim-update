@@ -1,5 +1,5 @@
 #!/bin/sh
-NVIM="$HOME/.local/bin/nvim"
+NVIM="$HOME/.bin/nvim"
 
 nvim_version() {
   "$1" -v | head -1 | cut -d 'v' -f 2
