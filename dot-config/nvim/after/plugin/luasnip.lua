@@ -2,12 +2,13 @@ local luasnip = require("luasnip")
 luasnip.config.setup({ enable_autosnippets = true })
 
 vim.keymap.set({ "i", "s" }, "<Tab>", function()
-   if luasnip.jumpable(1) then luasnip.jump(1) end
-end)
+   return luasnip.jumpable(1) and "<Cmd>lua require 'luasnip'.jump(1)<CR>" or "<Tab>"
+end, { expr = true })
 vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
-   if luasnip.jumpable(-1) then luasnip.jump(-1) end
+   return luasnip.jumpable(-1) and "<Cmd>lua require 'luasnip'.jump(-1)<CR>" or "<S-Tab>"
 end)
 
+---@diagnostic disable-next-line: assign-type-mismatch
 require("luasnip.loaders.from_lua").lazy_load({ paths = "./snippets" })
 
 vim.api.nvim_create_user_command("EditSnippets", function(_)
