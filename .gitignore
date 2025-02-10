@@ -3,5 +3,3 @@ dot-config/nvim/plugin/
 dot-config/nvim/plugin/packer_compiled.lua
 
 dot-config/weechat/sec.conf
-
-dot-config/rclone/rclone.conf
