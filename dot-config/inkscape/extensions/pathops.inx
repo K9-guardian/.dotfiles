@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+
+  <name>PathOps Custom</name>
+  <id>de.vektorrascheln.path.custom</id>
+
+  <param name="mode" type="optiongroup" appearance="radio" gui-text="Path operation:">
+    <option value="un">Union</option>
+    <option value="diff">Difference</option>
+    <option value="inter">Intersection</option>
+    <option value="exclor">Exclusion</option>
+    <option value="div">Division</option>
+    <option value="cut">Cut Path</option>
+    <option value="comb">Combine</option>
+  </param>
+
+  <param name="max_ops" type="int" min="2" max="9999" gui-text="Max operations per run">500</param>
+  <param name="recursive_sel" type="boolean" gui-text="Recurse into groups" gui-description="If unchecked, only direct children of top-level groups in the selection will be processed for inclusion.">true</param>
+  <param name="keep_top" type="boolean" gui-text="Keep top element when done">true</param>
+  <param name="dry_run" type="boolean" gui-text="Dry run">false</param>
+
+  <effect needs-document="true" needs-live-preview="false">
+    <effects-menu hidden="false">
+      <submenu name="Boolean Operations" />
+    </effects-menu>
+    <menu-tip>Apply Inkscape path operations to multiple objects.</menu-tip>
+    <object-type>all</object-type>
+  </effect>
+
+  <script>
+    <command location="inx" interpreter="python">pathops.py</command>
+  </script>
+
+</inkscape-extension>
