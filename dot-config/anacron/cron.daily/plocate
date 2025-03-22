@@ -1,2 +1,0 @@
-#!/bin/sh
-updatedb -l 0 -o $XDG_DATA_HOME/plocate.db -U $HOME
