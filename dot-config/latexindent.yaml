@@ -1,19 +1,22 @@
 defaultIndent: "    "
 
 indentAfterItems:
-  itemize: 0
   enumerate: 0
+  itemize: 0
 
 noIndent:
   verbatim: 1
   verbatim*: 1
 
 noAdditionalIndent:
+  algorithm: 1
   center: 1
   displayMath: 1
+  figure: 1
   inlineMath: 1
   multicols*: 1
   rSection: 1
+  table: 1
 
 lookForAlignDelims:
  tabular: 0
