@@ -30,8 +30,7 @@ shopt -s globstar
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 if [ -x /usr/bin/fzf ]; then
-  source /usr/share/doc/fzf/examples/key-bindings.bash
-  source /usr/share/doc/fzf/examples/completion.bash
+  source /usr/share/fzf/shell/key-bindings.bash
 fi
 
 [ -x /usr/bin/git ] && source /usr/share/bash-completion/completions/git
@@ -102,7 +101,7 @@ if [ -x /usr/bin/dircolors ]; then
   alias egrep='egrep --color=auto'
 fi
 
-if [ -x "$XDG_DATA_HOME/cargo/bin/lsd" ]; then
+if [ -x "/usr/bin/lsd" ]; then
   alias ls='lsd --group-directories-first'
   alias la='ls -a'
   alias ll='ls -la'
