@@ -1,0 +1,5 @@
+[user]
+	email = girkar.km@gmail.com
+	name = Krishna Girkar
+[credential]
+	helper = oauth
