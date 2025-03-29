@@ -101,7 +101,7 @@ if [ -x /usr/bin/dircolors ]; then
   alias egrep='egrep --color=auto'
 fi
 
-if [ -x "/usr/bin/lsd" ]; then
+if [ -x /usr/bin/lsd ]; then
   alias ls='lsd --group-directories-first'
   alias la='ls -a'
   alias ll='ls -la'
@@ -122,7 +122,6 @@ fi
 [ -x "$HOME/.local/kitty.app/bin/kitty"  ] && alias ssh='kitty +kitten ssh'
 
 alias ..='cd ..'
-alias brewtree='brew deps --tree --installed'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias gr='cd "$(git rev-parse --show-toplevel)"'
 alias vpnucsd='pass ucsd/kgirkar 2>/dev/null | sudo openconnect --authgroup="2-Step Secured - allthruucsd" --user=kgirkar --passwd-on-stdin vpn.ucsd.edu'
