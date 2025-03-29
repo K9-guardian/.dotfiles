@@ -1,2 +1,0 @@
-#!/bin/sh
-rclone copyto $HOME/.config/CrossCode/Default/cc.save Drive:Backups/CrossCode/cc.save

@@ -1,2 +1,0 @@
-#!/bin/sh
-rclone copy $HOME'/.local/share/PrismLauncher/instances/Create- Above and Beyond/minecraft/saves' 'Drive:Backups/Create- Above and Beyond'

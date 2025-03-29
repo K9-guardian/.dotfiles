@@ -1,2 +1,0 @@
-#!/bin/sh
-rclone copy $HOME/.config/unity3d/ Drive:Backups/unity3d
