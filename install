@@ -10,7 +10,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 
 sudo dnf install papirus-icon-theme -y
-sudo dnf install fastfetch sl openconnect -y
+sudo dnf install fastfetch openconnect sl -y
+sudo dnf install playerctl -y
 
 sudo dnf install syncthing -y
 
@@ -26,12 +27,11 @@ sudo dnf install rclone -y
 
 sudo dnf install inkscape -y
 
-sudo dnf install bat lsd rg zoxide -y
+sudo dnf install bat fd-find lsd rg zoxide -y
 
-sudo dnf install clojure -y
-sudo dnf install swi-prolog -y
+sudo dnf install clojure julia racket swi-prolog -y
 
-sudo dnf install texlive -y
+sudo dnf install texlive-scheme-full -y
 sudo dnf install zathura -y
 sudo dnf install zathura-pdf-poppler -y
 sudo dnf install zathura-djvu -y
