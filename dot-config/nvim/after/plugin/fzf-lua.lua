@@ -9,3 +9,5 @@ require("fzf-lua").setup {
       height = 0.9
    },
 }
+
+vim.keymap.set("n", "<C-p>", require("fzf-lua").files)
