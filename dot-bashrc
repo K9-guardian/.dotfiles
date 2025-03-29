@@ -1,3 +1,4 @@
+#!/bin/bash
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -80,27 +81,6 @@ case "$TERM" in
     ;;
 esac
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    source /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    source /etc/bash_completion
-  fi
-fi
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-  # alias ls='ls --color=auto'
-
-  alias grep='grep --color=auto'
-  alias fgrep='fgrep --color=auto'
-  alias egrep='egrep --color=auto'
-fi
-
 if [ -x /usr/bin/lsd ]; then
   alias ls='lsd --group-directories-first'
   alias la='ls -a'
@@ -118,10 +98,10 @@ fi
 
 [ -x /usr/bin/bat ] && alias cat='bat'
 [ -x /usr/bin/zoxide ] && eval "$(zoxide init --cmd cd bash)"
-[ -x "$HOME/.local/kitty.app/bin/kitten" ] && alias icat='kitten icat --align left'
-[ -x "$HOME/.local/kitty.app/bin/kitty"  ] && alias ssh='kitty +kitten ssh'
+[ -x /usr/bin/kitty ] && alias icat='kitten icat --align left'
+[ -x /usr/bin/kitty ] && alias ssh='kitty +kitten ssh'
 
 alias ..='cd ..'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias gr='cd "$(git rev-parse --show-toplevel)"'
-alias vpnucsd='pass ucsd/kgirkar 2>/dev/null | sudo openconnect --authgroup="2-Step Secured - allthruucsd" --user=kgirkar --passwd-on-stdin vpn.ucsd.edu'
+[ -x /usr/bin/openconnect ] && alias vpnucsd='pass ucsd/kgirkar 2>/dev/null | sudo openconnect --authgroup="2-Step Secured - allthruucsd" --user=kgirkar --passwd-on-stdin vpn.ucsd.edu'
