@@ -5,7 +5,6 @@ require("nvim-treesitter.configs").setup {
       "haskell",
       "java",
       "javascript",
-      "latex",
       "prolog",
       "python",
       "racket",
