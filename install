@@ -9,14 +9,10 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # GHCUp
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 
-sudo dnf install papirus-icon-theme -y
 sudo dnf install fastfetch openconnect sl -y
 sudo dnf install playerctl -y
 
 sudo dnf install syncthing -y
-
-sudo dnf install stow -y
-stow --dotfiles .
 
 sudo dnf install kitty -y
 
@@ -28,6 +24,10 @@ sudo dnf install rclone -y
 sudo dnf install inkscape -y
 
 sudo dnf install bat fd-find lsd rg zoxide -y
+
+[ -f "$HOME/.cargo/env" ] \
+  && . "$HOME/.cargo/env" \
+  && cargo install du-dust # no dust in fedora :(
 
 sudo dnf install clojure julia racket swi-prolog -y
 
