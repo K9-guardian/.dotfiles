@@ -13,4 +13,7 @@ stow --dotfiles .
 
 # disable neovim plugins for new install
 mv ~/.config/nvim/after ~/.config/nvim/after.disabled
+
+# make spooldir for local anacron
+mkdir -p ~/.local/var/spool/anacron
 ```
