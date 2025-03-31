@@ -1,0 +1,3 @@
+#!/bin/sh
+borg create --stats --progress ::{user}@{hostname}:{now} ~/Documents ~/Downloads ~/Pictures ~/.config
+rclone sync $BORG_REPO Drive:Backups/borg_homedir
