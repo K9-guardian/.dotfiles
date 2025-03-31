@@ -1,7 +1,7 @@
 # vim:foldmethod=marker
 
 # Defaults {{{
-export BROWSER=/usr/bin/firefox
+export BROWSER=librewolf
 export EDITOR=nvim
 export VISUAL=nvim
 # }}}
@@ -21,9 +21,11 @@ export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 
 # Programs {{{
 export FZF_DEFAULT_COMMAND='rg --files'
+export BORG_PASSCOMMAND='pass borg/k9guardian'
 # }}}
 
 # Path {{{
+# TODO: Fix .profile being sourced twice (i think) and duplicating path
 export PATH
 
 PATH="$XDG_DATA_HOME/scryer-prolog/target/release:$PATH"
