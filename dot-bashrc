@@ -25,11 +25,11 @@ shopt -s globstar
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-if [ -x /usr/bin/fzf ]; then
-  source /usr/share/fzf/shell/key-bindings.bash
-fi
+[ -x /usr/bin/fzf ] && source /usr/share/fzf/shell/key-bindings.bash
 
+# TODO: Figure out how to source everything in these folders?
 [ -x /usr/bin/git ] && source /usr/share/bash-completion/completions/git
+[ -x /usr/bin/pass ] && source /usr/share/bash-completion/completions/pass
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
