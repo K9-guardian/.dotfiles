@@ -1,4 +1,4 @@
-# vim:foldmethod=marker
+# vim:foldmethod=marker ft=sh
 
 # Defaults {{{
 export BROWSER=librewolf
@@ -25,16 +25,24 @@ export BORG_PASSCOMMAND='pass borg/k9guardian'
 # }}}
 
 # Path {{{
-# TODO: Fix .profile being sourced twice (i think) and duplicating path
-export PATH
-
-PATH="$XDG_DATA_HOME/scryer-prolog/target/release:$PATH"
+path_prepend () {
+  case ":${PATH}:" in
+    *:"$1":*)
+      ;;
+    *)
+      PATH="$1:$PATH"
+      ;;
+  esac
+}
 
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
-PATH="$HOME/.local/bin:$PATH"
-PATH="$HOME/.bin:$PATH"
-PATH="$HOME/.scripts:$PATH"
+path_prepend "$HOME/.bin"
+path_prepend "$HOME/.local/bin"
+path_prepend "$HOME/.scripts"
+path_prepend "$XDG_DATA_HOME/scryer-prolog/target/release"
+
+unset -f path_prepend
 #}}}
 
 [ -n "$BASH_VERSION" ] && [ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
