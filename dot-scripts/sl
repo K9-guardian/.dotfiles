@@ -7,5 +7,5 @@
 
 ((λ ()
    (system (string-join (first (shuffle (combinations '("-a" "-l" "-F"))))
-                        #:before-first "/usr/games/sl "))
+                        #:before-first "/usr/bin/sl "))
    (void)))
