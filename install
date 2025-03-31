@@ -2,6 +2,9 @@
 
 sudo dnf install git-credential-oauth -y
 
+curl -fsSL https://repo.librewolf.net/librewolf.repo | pkexec tee /etc/yum.repos.d/librewolf.repo
+sudo dnf install librewolf
+
 # Rustup
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
