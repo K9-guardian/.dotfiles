@@ -10,4 +10,4 @@ require("fzf-lua").setup {
    },
 }
 
-vim.keymap.set("n", "<C-p>", require("fzf-lua").files)
+vim.keymap.set("n", "<C-p>", require("fzf-lua").git_files)
