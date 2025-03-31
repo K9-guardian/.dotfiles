@@ -1,12 +1,12 @@
-# If not running interactively, don't do anything
-case $- in
-  *i*)
-    ;;
-  *)
-    return
-    ;;
-esac
+# .bashrc
+# vim:foldmethod=marker ft=bash
 
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# Defaults {{{
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -27,15 +27,13 @@ shopt -s globstar
 
 [ -x /usr/bin/fzf ] && source /usr/share/fzf/shell/key-bindings.bash
 
-# TODO: Figure out how to source everything in these folders?
-[ -x /usr/bin/git ] && source /usr/share/bash-completion/completions/git
-[ -x /usr/bin/pass ] && source /usr/share/bash-completion/completions/pass
-
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
   debian_chroot=$(cat /etc/debian_chroot)
 fi
+# }}}
 
+# Prompt {{{
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
   xterm-color|*-256color)
@@ -75,7 +73,9 @@ case "$TERM" in
   *)
     ;;
 esac
+# }}}
 
+# Aliases {{{
 if [ -x /usr/bin/lsd ]; then
   alias ls='lsd --group-directories-first'
   alias la='ls -a'
@@ -100,3 +100,4 @@ alias ..='cd ..'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias gr='cd "$(git rev-parse --show-toplevel)"'
 [ -x /usr/bin/openconnect ] && alias vpnucsd='pass ucsd/kgirkar 2>/dev/null | sudo openconnect --authgroup="2-Step Secured - allthruucsd" --user=kgirkar --passwd-on-stdin vpn.ucsd.edu'
+# }}}
