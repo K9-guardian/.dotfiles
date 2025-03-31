@@ -1,13 +1,15 @@
 #!/bin/sh
-# TODO: Add usage in README.md
 
 sudo dnf install git-credential-oauth -y
 
 # Rustup
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # GHCUp
-curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+# curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+
+# Enable for laptops to fix 2 finger scroll on librewolf/firefox
+# echo export MOZ_USE_XINPUT2=1 | sudo tee /etc/profile.d/use-xinput2.sh
 
 sudo dnf install fastfetch openconnect sl -y
 sudo dnf install playerctl -y
@@ -17,7 +19,6 @@ sudo dnf install syncthing -y
 sudo dnf install kitty -y
 
 sudo dnf install neovim -y
-# TODO: automate installing neovim packages
 
 sudo dnf install rclone -y
 
@@ -39,5 +40,3 @@ sudo dnf install zathura-djvu -y
 # Packer
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
-# TODO: automate nerd font install
