@@ -78,10 +78,13 @@ esac
 # Aliases {{{
 if [ -x /usr/bin/lsd ]; then
   alias ls='lsd --group-directories-first'
-  alias la='ls -a'
-  alias ll='ls -la'
   alias tree='ls --tree'
+else
+  alias ls='ls --color --group-directories-first'
 fi
+
+alias la='ls -a'
+alias ll='ls -la'
 
 if [ -x /usr/bin/nvim ]; then
   alias ex='nvim -e'
