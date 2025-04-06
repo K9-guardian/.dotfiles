@@ -2,9 +2,6 @@
 
 sudo dnf install git-credential-oauth -y
 
-curl -fsSL https://repo.librewolf.net/librewolf.repo | pkexec tee /etc/yum.repos.d/librewolf.repo
-sudo dnf install librewolf
-
 # Rustup
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
@@ -13,6 +10,9 @@ sudo dnf install librewolf
 
 # Enable for laptops to fix 2 finger scroll on librewolf/firefox
 # echo export MOZ_USE_XINPUT2=1 | sudo tee /etc/profile.d/use-xinput2.sh
+
+sudo dnf install dash -y
+sudo ln -sf /usr/bin/dash /usr/bin/sh
 
 sudo dnf install fastfetch openconnect sl -y
 sudo dnf install playerctl -y
