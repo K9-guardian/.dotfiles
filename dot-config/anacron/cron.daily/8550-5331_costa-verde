@@ -1,2 +1,0 @@
-#!/bin/sh
-rclone copy $HOME/Documents/8550-5331_CostaVerde/ DriveEncrypted:8550-5331_CostaVerde
