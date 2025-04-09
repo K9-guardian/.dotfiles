@@ -1,0 +1,5 @@
+plugins: fetchart fuzzy lastgenre missing
+
+lastgenre:
+  count: 3
+  whitelist: /home/k9guardian/.config/beets/genres.txt
