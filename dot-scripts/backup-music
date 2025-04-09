@@ -1,2 +1,2 @@
 #!/bin/sh
-rsync -azvhP $HOME/Music /run/media/k9guardian/Backups/Music
+rsync -azvhP $HOME/Music/ /run/media/k9guardian/Backups/Music/
