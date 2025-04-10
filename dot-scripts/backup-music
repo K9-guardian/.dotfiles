@@ -1,2 +1,0 @@
-#!/bin/sh
-rsync -azvhP --delete $HOME/Music/FLAC/ /run/media/k9guardian/Backups/Music/
