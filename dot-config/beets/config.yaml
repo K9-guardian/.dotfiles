@@ -1,5 +1,18 @@
-plugins: fetchart fuzzy lastgenre missing
+plugins: convert fetchart fuzzy lastgenre mbsync missing
+
+convert:
+  copy_album_art:
+    yes
+  format:
+    opus
+
+directory:
+  /home/k9guardian/Music/FLAC
 
 lastgenre:
+  canonical: yes
   count: 3
   whitelist: /home/k9guardian/.config/beets/genres.txt
+
+original_date:
+  yes
