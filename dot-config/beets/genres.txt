@@ -8,15 +8,15 @@ rap
 ambient
 video game music
 
+rock
 glam rock
 hard rock
 indie rock
-rock
 shoegaze
 
+heavy metal
 death metal
 doom metal
-heavy metal
 nu metal
 thrash metal
 

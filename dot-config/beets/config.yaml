@@ -1,4 +1,4 @@
-plugins: convert fetchart fuzzy lastgenre mbsync missing
+plugins: convert embedart fetchart fuzzy lastgenre mbsync missing
 
 convert:
   copy_album_art:
