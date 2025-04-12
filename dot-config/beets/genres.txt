@@ -1,39 +1,32 @@
-classical
-
-country
-
 hip hop
 rap
 
 ambient
-video game music
+video game soundtrack
+film soundtrack
+musical
+anime soundtrack
+tv show soundtrack
 
 rock
-glam rock
-hard rock
-indie rock
-shoegaze
+glam metal
+classic rock
+noise rock
 
 grunge
 
 heavy metal
-death metal
-doom metal
+groove metal
 nu metal
 thrash metal
-
 grindcore
-hardcore
 metalcore
 
-indian pop
-j-pop
-k-pop
 pop
+blackgaze
+shoegaze
 
 breakcore
 electronic
-house
-synthwave
 
 jazz
