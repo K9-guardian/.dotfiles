@@ -1,10 +1,8 @@
-plugins: convert embedart fetchart fuzzy lastgenre mbsync missing
+plugins: convert embedart fetchart fuzzy lastgenre replaygain mbsync missing
 
 convert:
-  copy_album_art:
-    yes
-  format:
-    opus
+  copy_album_art: yes
+  format: opus
 
 directory:
   /home/k9guardian/Music/FLAC
@@ -14,5 +12,7 @@ lastgenre:
   count: 3
   whitelist: /home/k9guardian/.config/beets/genres.txt
 
-original_date:
-  yes
+replaygain:
+  backend: ffmpeg
+
+original_date: yes
