@@ -1,8 +1,19 @@
-plugins: convert embedart fetchart fuzzy replaygain mbsync missing
+plugins:
+- alternatives
+- convert
+- duplicates
+- embedart
+- fetchart
+- fuzzy
+- replaygain
+- mbsync
+- missing
 
-convert:
-  copy_album_art: yes
-  format: opus
+alternatives:
+  opus:
+    directory: /home/k9guardian/Music/OPUS
+    query: ""
+    formats: opus
 
 directory:
   /home/k9guardian/Music/FLAC
