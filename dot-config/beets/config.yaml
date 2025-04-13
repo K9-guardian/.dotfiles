@@ -1,6 +1,7 @@
 plugins:
 - alternatives
 - convert
+- describe
 - duplicates
 - edit
 - embedart
