@@ -2,6 +2,7 @@ plugins:
 - alternatives
 - convert
 - duplicates
+- edit
 - embedart
 - fetchart
 - fuzzy
@@ -17,6 +18,9 @@ alternatives:
 
 directory:
   /home/k9guardian/Music/FLAC
+
+edit:
+  albumfields: album albumartist genre
 
 replaygain:
   backend: ffmpeg
