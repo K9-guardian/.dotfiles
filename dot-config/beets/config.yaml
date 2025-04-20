@@ -5,6 +5,7 @@ plugins:
 - describe
 - duplicates
 - edit
+- export
 - fetchart
 - fuzzy
 - info
