@@ -1,0 +1,7 @@
+#!/usr/bin/env python
+
+import subprocess
+
+query = subprocess.check_output('playerctl --player rhythmbox metadata --format "artist:\\"{{ artist }}\\" album:\\"{{ album }}\\" title:\\"{{ title }}\\""', shell=True).decode("utf-8").strip()
+
+subprocess.call(f'beet bpm {query}', shell=True)
