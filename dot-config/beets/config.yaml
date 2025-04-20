@@ -1,29 +1,59 @@
 plugins:
 - alternatives
+- badfiles
+- bpm
 - convert
 - describe
 - duplicates
 - edit
-- embedart
 - fetchart
 - fuzzy
-- replaygain
+- info
 - mbsync
 - missing
+- replaygain
+- scrub
+- zero
 
 alternatives:
   opus:
     directory: /home/k9guardian/Music/OPUS
     query: ""
-    formats: opus
+    formats: opus mp3
+
+badfiles:
+  check_on_import: yes
+
+convert:
+  copy_album_art: yes
+  embed: no
 
 directory:
   /home/k9guardian/Music/FLAC
 
 edit:
-  albumfields: album albumartist genre
+  albumfields: album albumartist albumtype genre
+
+fetchart:
+  maxwidth: 500
+
+format_album: "[$year] $albumartist - $album"
+format_item: "[$year] $artist - $album - $title"
+
+paths:
+  default: $albumartist/[$year] $album%aunique{}/$track $title
+  singleton: Non-Album/[$year] $artist/$title
+  comp: Compilations/[$year] $album%aunique{}/$track $title
 
 replaygain:
   backend: ffmpeg
+  overwrite: yes
+
+sort_album: "albumartist+ year+ album+"
+sort_item: "artist+ year+ album+ disc+ track+"
 
 original_date: yes
+
+zero:
+  fields: images
+  update_database: true
