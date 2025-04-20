@@ -1,7 +1,6 @@
 \.git
 \.git-crypt
 \.gitattributes
-\.gitignore
 install
 k9guardian_crontab
 
