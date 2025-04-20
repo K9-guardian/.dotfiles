@@ -13,7 +13,7 @@ sudo dnf install playerctl -y
 
 sudo dnf install calibre pdftk -y
 
-pip install beets beets[autobpm] beets[fetchart] beets-alternatives beets-describe
+pip install beets beets[fetchart] beets-alternatives beets-describe
 
 # TODO: flatpak vlc
 # TODO: tinyMediaManager
