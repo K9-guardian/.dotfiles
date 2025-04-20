@@ -1,0 +1,68 @@
+#!/usr/bin/env python3
+import sys
+import ast
+
+def process_toc(items, level=1):
+    output = []
+    for item in items:
+        if isinstance(item, list):
+            # Check if this is a nested item (has sub-items)
+            if len(item) >= 3 and isinstance(item[2], list):
+                # Format: [page, title, [subitems...]]
+                output.append(f"BookmarkLevel: {level}")
+                output.append("BookmarkBegin")
+                output.append(f"BookmarkTitle: {item[1]}")
+                output.append(f"BookmarkPageNumber: {item[0]}")
+                # Process sub-items with increased level
+                output.extend(process_toc(item[2], level + 1))
+            elif len(item) >= 2:
+                # Format: [page, title]
+                output.append(f"BookmarkLevel: {level}")
+                output.append("BookmarkBegin")
+                output.append(f"BookmarkTitle: {item[1]}")
+                output.append(f"BookmarkPageNumber: {item[0]}")
+        else:
+            # Simple item (just title, default page 1)
+            output.append(f"BookmarkLevel: {level}")
+            output.append("BookmarkBegin")
+            output.append(f"BookmarkTitle: {item}")
+            output.append("BookmarkPageNumber: 1")
+    return output
+
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: list2toc.py <input_file>")
+        sys.exit(1)
+    
+    input_file = sys.argv[1]
+    
+    try:
+        with open(input_file, 'r') as f:
+            contents = f.read()
+            toc_list = ast.literal_eval(contents)
+        
+        if not isinstance(toc_list, list):
+            raise ValueError("Input file must contain a Python list")
+        
+        # Generate the output
+        output = [
+            "BookmarkLevel: 1",
+            "BookmarkBegin",
+            "BookmarkTitle: Table of Contents",
+            "BookmarkPageNumber: 1"
+        ]
+        
+        output.extend(process_toc(toc_list))
+        
+        # Print the result
+        print("\n".join(output))
+    
+    except FileNotFoundError:
+        print(f"Error: File '{input_file}' not found.", file=sys.stderr)
+        sys.exit(1)
+    except (SyntaxError, ValueError) as e:
+        print(f"Error: Invalid input file format - {e}", file=sys.stderr)
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()
