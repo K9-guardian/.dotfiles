@@ -8,15 +8,16 @@ sudo dnf install git-credential-oauth -y
 # GHCUp
 # curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 
-sudo dnf install dash -y
-sudo ln -sf /usr/bin/dash /usr/bin/sh
-
 sudo dnf install fastfetch openconnect sl -y
 sudo dnf install playerctl -y
 
-sudo dnf install beets beets-doc beets-plugins -y
+sudo dnf install calibre pdftk -y
+
+pip install beets beets[autobpm] beets[fetchart] beets-alternatives beets-describe
 
 # TODO: flatpak vlc
+# TODO: tinyMediaManager
+sudo dnf install libmediainfo -y
 
 sudo dnf install syncthing -y
 
@@ -42,3 +43,4 @@ sudo dnf install zathura-djvu -y
 # Packer
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
