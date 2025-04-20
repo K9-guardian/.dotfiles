@@ -3,5 +3,6 @@
 \.gitattributes
 \.gitignore
 install
+k9guardian_crontab
 
 ^/README.*
