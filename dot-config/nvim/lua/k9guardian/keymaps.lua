@@ -1,5 +1,5 @@
-vim.keymap.set("n", "]q", "<Cmd>cnext<CR>")
-vim.keymap.set("n", "[q", "<Cmd>cprevious<CR>")
+vim.keymap.set("c", "<C-a>", "<Home>")
+
 vim.keymap.set("n", "<Leader>co", "<Cmd>copen<CR>", { silent = false })
 vim.keymap.set("n", "<Leader>cc", "<Cmd>cclose<CR>", { silent = false })
 

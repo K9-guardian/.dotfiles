@@ -17,6 +17,7 @@ return require("packer").startup(function(use)
    use "tpope/vim-fugitive"
    use "tpope/vim-repeat"
    use "tpope/vim-surround"
+   use "tpope/vim-unimpaired"
    use { "ibhagwan/fzf-lua", requires = { "nvim-tree/nvim-web-devicons" } }
    -- }}}
 
