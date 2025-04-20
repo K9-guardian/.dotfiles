@@ -1,2 +1,0 @@
-#!/bin/sh
-rclone copy $HOME/Documents/PII DriveEncrypted:PII

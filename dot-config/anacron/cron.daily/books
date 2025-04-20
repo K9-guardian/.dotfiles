@@ -1,2 +1,0 @@
-#!/bin/sh
-rclone copy $HOME/Documents/Books Drive:Backups/Books

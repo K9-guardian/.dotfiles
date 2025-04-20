@@ -1,2 +1,0 @@
-#!/bin/sh
-rclone copy $HOME/Pictures/Origami Drive:Backups/Origami
