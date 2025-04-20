@@ -1,2 +1,2 @@
 #!/bin/sh
-borg create --stats --progress ::{user}@{hostname}:{now} ~/Documents ~/Pictures ~/Videos ~/Music ~/.config
+borg create --stats --progress ::{user}@{hostname}:{now} ~/Documents ~/Pictures ~/Videos ~/Music ~/.config ~/.local
