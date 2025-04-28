@@ -38,7 +38,7 @@ fetchart:
   maxwidth: 500
 
 format_album: "[$year] $albumartist - $album"
-format_item: "[$year] $artist - $album - $title"
+format_item: "[$year] $artist - $album - $title - $length"
 
 paths:
   default: $albumartist/[$year] $album%aunique{}/$track $title
