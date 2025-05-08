@@ -65,6 +65,7 @@ require("mason-lspconfig").setup {
    -- TODO: Figure out good extensions for python and typescript
    ensure_installed = {
       "clojure_lsp",
+      "gopls",
       -- "hls",
       "jdtls",
       "julials",
@@ -79,6 +80,7 @@ local lsp = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 lsp.clojure_lsp.setup({ on_attach = on_attach, capabilities = capabilities })
+lsp.gopls.setup({ on_attach = on_attach, capabilities = capabilities })
 lsp.hls.setup {
    on_attach = on_attach,
    capabilities = capabilities,
@@ -120,6 +122,8 @@ lsp.texlab.setup {
    },
 }
 lsp.tinymist.setup {
+   on_attach = on_attach,
+   capabilities = capabilities,
    settings = {
       formatterMode = "typstyle",
       exportPdf = "onType",
