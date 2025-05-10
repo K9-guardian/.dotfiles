@@ -17,7 +17,7 @@ pip install beets beets[fetchart] beets-alternatives beets-describe
 
 # TODO: flatpak vlc
 # TODO: tinyMediaManager
-sudo dnf install libmediainfo mkvtoolnix -y
+sudo dnf install libmediainfo mkvtoolnix aegisub -y
 
 sudo dnf install croc -y
 sudo dnf install syncthing -y
