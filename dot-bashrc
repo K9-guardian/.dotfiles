@@ -11,6 +11,9 @@ fi
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
+# Disable screen reader support (needed for poppler)
+export NO_AT_BRIDGE=1
+
 # append to the history file, don't overwrite it
 shopt -s histappend
 
@@ -22,15 +25,10 @@ shopt -s checkwinsize
 # match all files and zero or more directories and subdirectories.
 shopt -s globstar
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
+# Set up keybinds for applications
 [ -x /usr/bin/fzf ] && eval "$(fzf --bash)"
-
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-  debian_chroot=$(cat /etc/debian_chroot)
-fi
+[ -x $HOME/.atuin/bin/atuin ] && eval "$(atuin init bash --disable-up-arrow)"
+[ -x /usr/bin/zoxide ] && eval "$(zoxide init --cmd cd bash)"
 # }}}
 
 # Prompt {{{
@@ -59,9 +57,9 @@ fi
 
 if [ "$color_prompt" = yes ]; then
   LITTLE_MAN='$(if [ $? = 0 ]; then echo "\[\e[32m\]\\o/\[\e[0m\]"; else echo "\[\e[31m\]/o\\\[\e[0m\]"; fi)'
-  PS1="${debian_chroot:+($debian_chroot)}($LITTLE_MAN):\w $ "
+  PS1="($LITTLE_MAN):\w $ "
 else
-  PS1='${debian_chroot:+($debian_chroot)}\w $ '
+  PS1='\w $ '
 fi
 unset color_prompt force_color_prompt
 
@@ -95,7 +93,6 @@ if [ -x /usr/bin/nvim ]; then
 fi
 
 [ -x /usr/bin/bat ] && alias cat='bat'
-[ -x /usr/bin/zoxide ] && eval "$(zoxide init --cmd cd bash)"
 [ -x /usr/bin/kitty ] && alias icat='kitten icat --align left'
 [ -x /usr/bin/kitty ] && alias ssh='kitty +kitten ssh'
 
@@ -105,3 +102,5 @@ alias open='xdg-open'
 
 [ -x /usr/bin/openconnect ] && alias vpnucsd='pass ucsd/kgirkar 2>/dev/null | sudo openconnect --authgroup="2-Step Secured - allthruucsd" --user=kgirkar --passwd-on-stdin vpn.ucsd.edu'
 # }}}
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
