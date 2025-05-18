@@ -1,5 +1,7 @@
 set adjust-open width
 
+set database sqlite
+
 set selection-clipboard clipboard
 
 set window-height 10000
