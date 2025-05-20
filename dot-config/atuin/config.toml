@@ -108,6 +108,7 @@ history_filter = [
   "^ll",
   "^tree",
   "^cd",
+  "^\\.\\.",
 ]
 
 ## prevent commands run with cwd matching any of these regexes from being written
