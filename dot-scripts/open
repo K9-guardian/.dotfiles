@@ -4,8 +4,8 @@ xdg-open "$*" 2> /dev/null & disown
 case "$*" in
   *.pdf|*.djvu)
     # Auto focus zathura
-    sleep 0.5
     DESKTOP=$(xdotool get_desktop)
+    sleep 0.75
     ZATHURA_WIN=$(
     wmctrl -lx \
       | awk -v desktop=$DESKTOP '$2 == desktop' \
