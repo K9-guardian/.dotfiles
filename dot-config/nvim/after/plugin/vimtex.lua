@@ -18,7 +18,6 @@ local function open_viewer()
       os.execute("wmctrl -ir " .. vim.b.vimtex.viewer.xwin_id .. " -b remove,maximized_vert,maximized_horz")
       os.execute("xdotool windowsize " .. vim.b.vimtex.viewer.xwin_id .. " 50% 100%")
       os.execute("xdotool windowmove " .. vim.b.vimtex.viewer.xwin_id .. " 50% 100%")
-      -- Idk how to refocus vim without breaking something at least this saves 2 keystrokes
    end
 end
 
