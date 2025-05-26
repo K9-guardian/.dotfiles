@@ -19,7 +19,7 @@ alternatives:
   opus:
     directory: /home/k9guardian/Music/OPUS
     query: ""
-    formats: opus mp3
+    formats: opus mp3 aac
 
 badfiles:
   check_on_import: yes
