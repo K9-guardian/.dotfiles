@@ -1,5 +1,4 @@
 require("fzf-lua").setup {
-   "fzf-vim",
    winopts = {
       preview = {
          hidden = "nohidden",
@@ -12,3 +11,15 @@ require("fzf-lua").setup {
 
 vim.keymap.set("n", "<C-p>", require("fzf-lua").files)
 vim.keymap.set("n", "<C-S-p>", require("fzf-lua").git_files)
+
+vim.api.nvim_create_user_command('Rg', function(opts)
+   require('fzf-lua').grep({
+      search  = opts.args,
+      -- Add "--follow" to grep symlinks
+      rg_opts = "--column --line-number --no-heading --color=always --smart-case --follow --max-columns=4096 -e",
+   })
+end, {
+   nargs = '*',
+   desc = 'Search with fzf-lua grep',
+   complete = 'file',
+})
