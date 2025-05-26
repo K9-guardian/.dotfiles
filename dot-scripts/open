@@ -1,0 +1,11 @@
+#!/bin/sh
+xdg-open "$*" 2> /dev/null & disown
+
+case "$*" in
+  *.pdf|*.djvu)
+    # Auto focus zathura
+    sleep 0.5
+    ZATHURA_WIN=$(wmctrl -lx | grep "zathura" | grep "$*" | awk '{print $1}')
+    wmctrl -ia $ZATHURA_WIN
+    ;;&
+esac
