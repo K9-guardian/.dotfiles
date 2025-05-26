@@ -5,7 +5,8 @@ case "$*" in
   *.pdf|*.djvu)
     # Auto focus zathura
     sleep 0.5
-    ZATHURA_WIN=$(wmctrl -lx | grep "zathura" | grep "$*" | awk '{print $1}')
+    ZATHURA_WIN=$(wmctrl -lx | grep "zathura" | grep -F "$*" | awk '{print $1}')
+    echo $ZATHURA_WIN
     wmctrl -ia $ZATHURA_WIN
     ;;&
 esac
