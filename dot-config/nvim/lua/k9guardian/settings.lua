@@ -29,4 +29,4 @@ vim.opt.updatetime = 100
 
 vim.opt.spelllang = "en_us"
 
-vim.g["conjure#filetypes"] = { "clojure", "julia", "lua", "python", "racket" }
+vim.g["conjure#filetypes"] = { "clojure", "racket" }
