@@ -1,0 +1,12 @@
+#!/bin/sh
+NAS="/mnt/nas/share/k9"
+BORG_REPO=''
+BORG_PASSCOMMAND='pass borg/k9guardian'
+
+borg create --stats --progress ::{user}@{hostname}:{now} \
+  "$NAS" \
+  "$HOME/.config" \
+  "$HOME/.local" \
+  "$HOME/.gnupg" \
+  "$HOME/.password-store" \
+  "$HOME/.ssh"
