@@ -21,8 +21,6 @@ export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 # }}}
 
 # Programs {{{
-export BORG_PASSCOMMAND='pass borg/k9guardian'
-export BORG_REPO='/run/media/k9guardian/Backups/borg_homedirs/'
 export FZF_DEFAULT_COMMAND='rg --files'
 # }}}
 

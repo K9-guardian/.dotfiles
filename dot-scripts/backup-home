@@ -1,4 +1,6 @@
 #!/bin/sh
+BORG_REPO="/run/media/k9guardian/Backups/borg_homedirs/"
+BORG_PASSCOMMAND="pass borg/k9guardian"
 borg create --stats --progress ::{user}@{hostname}:{now} \
   "$HOME/Documents" \
   "$HOME/Pictures" \
