@@ -10,4 +10,7 @@ sudo dnf install stow -y
 stow --no-folding --dotfiles .
 
 ./install
+
+# add crontab for backups
+crontab k9guardian_crontab
 ```
