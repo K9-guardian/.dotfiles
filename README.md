@@ -1,4 +1,4 @@
-# Dotfiles for nas
+# Dotfiles for hippocampus
 
 Usage: 
 First import `private.gpg` for `git-crypt` - used for `rclone.conf`.
