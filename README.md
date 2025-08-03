@@ -1,7 +1,13 @@
 # Dotfiles
 
 Usage: 
-First import `private.gpg` for `git-crypt` - used for `rclone.conf`.
+First import keys from backup
+```
+~/.gnupg
+~/.passfiles
+~/.password-store
+```
+Make necessary edits to `install` and run
 ```
 sudo dnf install git git-crypt -y
 git-crypt unlock
