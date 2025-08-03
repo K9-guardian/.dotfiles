@@ -6,4 +6,7 @@ borg create --stats --progress ::{user}@{hostname}:{now} \
   "$HOME/Videos" \
   "$HOME/Games" \
   "$HOME/.config" \
-  "$HOME/.local"
+  "$HOME/.local" \
+  "$HOME/.gnupg" \
+  "$HOME/.password-store" \
+  "$HOME/.ssh"
