@@ -8,5 +8,6 @@ borg create --stats --progress ::{user}@{hostname}:{now} \
   "$HOME/.config" \
   "$HOME/.local" \
   "$HOME/.gnupg" \
+  "$HOME/.passfiles" \
   "$HOME/.password-store" \
   "$HOME/.ssh"

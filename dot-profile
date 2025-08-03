@@ -14,7 +14,6 @@ export XDG_STATE_HOME="$HOME/.local/state"
 # }}}
 
 # Programs {{{
-export BORG_PASSCOMMAND='pass borg/k9'
 export FZF_DEFAULT_COMMAND='rg --files'
 # }}}
 
