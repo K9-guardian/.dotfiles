@@ -1,9 +1,0 @@
-#!/bin/sh
-borg create --stats --progress ::{user}@{hostname}:{now} \
-  "$HOME/Documents" \
-  "$HOME/Pictures" \
-  "$HOME/Music" \
-  "$HOME/Videos" \
-  "$HOME/Games" \
-  "$HOME/.config" \
-  "$HOME/.local"

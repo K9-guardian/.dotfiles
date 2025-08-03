@@ -1,48 +1,21 @@
 #!/bin/sh
 
-sudo dnf install git-credential-oauth -y
-
-# Rustup
-# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-# GHCUp
-# curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-
-# Atuin
-# curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
-
 sudo dnf install fastfetch openconnect sl -y
-sudo dnf install playerctl -y
-
-sudo dnf install calibre pdftk -y
 
 pip install beets beets[fetchart] beets-alternatives beets-describe
-
-# TODO: tinyMediaManager
-sudo dnf install vlc libmediainfo mkvtoolnix aegisub -y
 
 sudo dnf install croc -y
 sudo dnf install syncthing -y
 
-sudo dnf install kitty neovim -y
+sudo dnf install neovim -y
 
 sudo dnf install rclone -y
-
-sudo dnf install inkscape -y
 
 sudo dnf install bat fd-find lsd rg tokei zoxide -y
 
 [ -f "$HOME/.cargo/env" ] \
   && . "$HOME/.cargo/env" \
   && cargo install du-dust # no dust in fedora :(
-
-sudo dnf install clojure julia racket swi-prolog -y
-# TODO: Scryer Prolog
-
-sudo dnf install texlive-scheme-full -y
-sudo dnf install zathura -y
-sudo dnf install zathura-pdf-mupdf -y
-sudo dnf install zathura-djvu -y
 
 # Packer
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\

@@ -1,5 +1,0 @@
-TabSize = 4
-
-CmdLine { -v2 }
-
-Silent { \State \Return \Else \clearpage }[ \End* ]

@@ -1,6 +1,0 @@
-#!/bin/sh
-# Make Cinnamon Sound Applet only recognize Rhythmbox
-PLAYER="rhythmbox"
-APPLET="/usr/share/cinnamon/applets/sound@cinnamon.org/applet.js"
-
-sudo sd "let name_regex = .*" "let name_regex = /^org\.mpris\.MediaPlayer2\.$PLAYER/" "$APPLET"

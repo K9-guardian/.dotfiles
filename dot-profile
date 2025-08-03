@@ -2,7 +2,6 @@
 # vim:foldmethod=marker ft=sh
 
 # Defaults {{{
-export BROWSER=firefox
 export EDITOR=nvim
 export VISUAL=nvim
 # }}}
@@ -14,15 +13,8 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 # }}}
 
-# Manual cleanup {{{
-export CHKTEXRC="$XDG_CONFIG_HOME/chktex"
-export INPUTRC="$XDG_CONFIG_HOME/inputrc"
-export WGETRC="$XDG_CONFIG_HOME/wgetrc"
-# }}}
-
 # Programs {{{
-export BORG_PASSCOMMAND='pass borg/k9guardian'
-export BORG_REPO='/run/media/k9guardian/Backups/borg_homedirs/'
+export BORG_PASSCOMMAND='pass borg/k9'
 export FZF_DEFAULT_COMMAND='rg --files'
 # }}}
 
@@ -39,9 +31,6 @@ path_prepend () {
 
 [ -f "$HOME/.atuin/bin/env" ] && . "$HOME/.atuin/bin/env"
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
-[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
-path_prepend "$XDG_DATA_HOME/scryer-prolog/target/release"
-path_prepend "$(go env GOPATH)/bin"
 path_prepend "$HOME/.local/bin"
 path_prepend "$HOME/.bin"
 path_prepend "$HOME/.scripts"
