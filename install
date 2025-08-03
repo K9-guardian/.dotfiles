@@ -2,7 +2,11 @@
 
 sudo dnf install fastfetch openconnect sl -y
 
-pip install beets beets[fetchart] beets-alternatives beets-describe
+python3 -m ensurepip --upgrade
+python3 -m pip install --upgrade pip
+python3 -m pip install beets beets[fetchart] beets-alternatives beets-describe
+
+sudo dnf install ffmpeg -y
 
 sudo dnf install croc -y
 sudo dnf install syncthing -y
