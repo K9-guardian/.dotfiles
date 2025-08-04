@@ -13,6 +13,11 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 # }}}
 
+# Manual cleanup {{{
+export INPUTRC="$XDG_CONFIG_HOME/inputrc"
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+# }}}
+
 # Programs {{{
 export BORG_PASSCOMMAND='pass borg/k9'
 export FZF_DEFAULT_COMMAND='rg --files'
