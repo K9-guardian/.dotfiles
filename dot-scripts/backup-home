@@ -1,7 +1,7 @@
 #!/bin/sh
 NAS="/mnt/nas/share/k9"
-BORG_REPO=''
-BORG_PASSCOMMAND='pass borg/k9guardian'
+export BORG_REPO='/mnt/borg/borg_homedirs/'
+export BORG_PASSCOMMAND='pass borg/k9'
 
 borg create --stats --progress ::{user}@{hostname}:{now} \
   "$NAS" \
