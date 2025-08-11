@@ -3,6 +3,8 @@
 # Rustup
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+sudo dnf install sensors -y
+
 sudo dnf install fastfetch openconnect sl -y
 
 python3 -m ensurepip --upgrade
