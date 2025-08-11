@@ -11,6 +11,8 @@ sudo dnf install git-credential-oauth -y
 # Atuin
 # curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 
+sudo dnf install sensors -y
+
 sudo dnf install fastfetch openconnect sl -y
 sudo dnf install playerctl -y
 
@@ -30,7 +32,7 @@ sudo dnf install rclone -y
 
 sudo dnf install inkscape -y
 
-sudo dnf install bat fd-find lsd rg tealdeer tokei zoxide -y
+sudo dnf install bat fd-find lsd rg tealdeer sd tokei zoxide -y
 
 [ -f "$HOME/.cargo/env" ] \
   && . "$HOME/.cargo/env" \
