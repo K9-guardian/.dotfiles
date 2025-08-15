@@ -5,6 +5,8 @@ export BORG_PASSCOMMAND='pass borg/k9'
 
 borg create --stats --progress ::{user}@{hostname}:{now} \
   "$NAS" \
+  "/var/lib/containers" \
+  "$HOME/nicotine" \
   "$HOME/.config" \
   "$HOME/.local" \
   "$HOME/.gnupg" \
