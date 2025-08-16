@@ -61,7 +61,6 @@ if [ "$color_prompt" = yes ]; then
 else
   PS1='\w $ '
 fi
-unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host dir
 case "$TERM" in
@@ -74,7 +73,7 @@ esac
 # }}}
 
 # Aliases {{{
-if [ -x /usr/bin/lsd ]; then
+if [ "$color_prompt" = yes -a -x /usr/bin/lsd ]; then
   alias ls='lsd --group-directories-first'
   alias tree='ls --tree'
 else
@@ -102,4 +101,5 @@ alias gr='cd "$(git rev-parse --show-toplevel)"'
 [ -x /usr/sbin/openconnect ] && alias vpnucsd='pass ucsd/kgirkar 2>/dev/null | sudo openconnect --authgroup="2-Step Secured - allthruucsd" --user=kgirkar --passwd-on-stdin vpn.ucsd.edu'
 # }}}
 
+unset color_prompt force_color_prompt
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
