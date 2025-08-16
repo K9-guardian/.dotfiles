@@ -1,1 +1,2 @@
 @hourly "$HOME/.secret/cloud-backup"
+@hourly tldr --update
