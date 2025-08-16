@@ -55,13 +55,7 @@ if [ -n "$force_color_prompt" ]; then
   fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-  LITTLE_MAN='$(if [ $? = 0 ]; then echo "\[\e[32m\]\\o/\[\e[0m\]"; else echo "\[\e[31m\]/o\\\[\e[0m\]"; fi)'
-  PS1="($LITTLE_MAN):\w $ "
-else
-  PS1='\w $ '
-fi
-unset color_prompt force_color_prompt
+PS1='\w $ '
 
 # If this is an xterm set the title to user@host dir
 case "$TERM" in
@@ -99,4 +93,5 @@ fi
 alias ..='cd ..'
 alias gr='cd "$(git rev-parse --show-toplevel)"'
 
+unset color_prompt force_color_prompt
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
