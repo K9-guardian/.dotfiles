@@ -26,7 +26,6 @@ shopt -s checkwinsize
 shopt -s globstar
 
 # Set up completion/keybinds for applications
-[ -x $HOME/.local/bin/beet ] && eval "$(beet completion)"
 [ -x /usr/bin/fzf ] && eval "$(fzf --bash)"
 [ -x $HOME/.atuin/bin/atuin ] && eval "$(atuin init bash --disable-up-arrow)"
 [ -x /usr/bin/zoxide ] && eval "$(zoxide init --cmd cd bash)"
