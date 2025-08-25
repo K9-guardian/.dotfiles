@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Tried doing this smarter, but too dumb for a solve
+chgrp -R nasusers /mnt/nas/share
+find /mnt/nas/share -type d -exec chmod 770 {} \;
+find /mnt/nas/share -type f -executable -exec chmod 770 {} \;
+find /mnt/nas/share -type f ! -executable -exec chmod 660 {} \;
