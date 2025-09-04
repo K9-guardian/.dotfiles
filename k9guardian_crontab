@@ -1,2 +1,3 @@
+@hourly "$HOME/.scripts/nas-perms"
 @hourly "$HOME/.secret/cloud-backup"
 @hourly tldr --update
