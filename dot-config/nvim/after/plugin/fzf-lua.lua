@@ -24,7 +24,7 @@ end, {
    complete = 'file',
 })
 
-vim.api.nvim_create_user_command('Rg', function(opts)
+vim.api.nvim_create_user_command('History', function(opts)
    require('fzf-lua').oldfiles({
       search  = opts.args,
       -- Add "--follow" to grep symlinks
