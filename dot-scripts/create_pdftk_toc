@@ -1,0 +1,98 @@
+#!/bin/env python
+
+from collections import Counter
+import argparse
+import re
+
+
+def ensure_consistent_table_of_contents_indentation(table_of_contents: str):
+    found_spaces, found_tabs = False, False
+
+    for line_number, line in enumerate(table_of_contents.splitlines()):
+        leading_whitespace = line[:len(line) - len(line.lstrip())]
+        if '\t' in leading_whitespace:
+            if ' ' in leading_whitespace or found_spaces:
+                raise ValueError(f"{line_number + 1}: Mixed spaces and tabs")
+            found_tabs = True
+        elif ' ' in leading_whitespace:
+            if '\t' in leading_whitespace or found_tabs:
+                raise ValueError(f"{line_number + 1}: Mixed spaces and tabs")
+            found_spaces = True
+
+
+def identify_table_of_contents_indent_amount(raw_table_of_contents: str) -> int:
+    # Using the "compare lines" method by Heather Arthur
+    # https://gist.github.com/harthur/c6c939a938db52064a7a
+
+    possible_indent_amounts: Counter[int] = Counter()
+    current_leading_whitespace_amount = 0
+
+    for line in raw_table_of_contents.splitlines():
+        leading_whitespace_amount = len(line) - len(line.lstrip())
+        indent_amount = abs(leading_whitespace_amount -
+                            current_leading_whitespace_amount)
+        if indent_amount > 1:
+            possible_indent_amounts[indent_amount] += 1
+        current_leading_whitespace_amount = leading_whitespace_amount
+
+    return possible_indent_amounts.most_common(1)[0][0]
+
+
+def print_table_of_contents(table_of_contents: str, indent_amount: int):
+
+    def print_line(line_number: int, line: str):
+        leading_whitespace_amount = len(line) - len(line.lstrip())
+        if leading_whitespace_amount % indent_amount != 0:
+            raise ValueError(
+                f"{line_number + 1}: Does not match the inferred indent amount of {indent_amount}")
+        indentation_level = leading_whitespace_amount // indent_amount
+        match = re.fullmatch(r'^\s*(.*)\s+(\d+)$', line)
+        if not match:
+            raise ValueError(
+                f"{line_number + 1}: Not formatted as \"(title) (page_number)\"")
+        title, page_number = match.group(1, 2)
+
+        print("BookmarkBegin")
+        print(f"BookmarkTitle: {title}")
+        print(f"BookmarkLevel: {indentation_level + 1}")
+        print(f"BookmarkPageNumber: {page_number}")
+
+    for line_number, line in enumerate(table_of_contents.splitlines()):
+        print_line(line_number, line)
+
+
+parser = argparse.ArgumentParser(
+    formatter_class=argparse.RawDescriptionHelpFormatter,
+    description="""
+Convert an indented table of contents for use with `pdftk`.
+The table of contents should match the following format:
+
+-------------------------------------------
+Introduction 2
+Chapter 1: Core Concepts 5
+    Section 1.1: Terminology 5
+    Section 1.2: Foundational Principles 8
+        Subsection 1.2.1: Basic Examples 10
+Chapter 2: Advanced Methods 12
+    Section 2.1: Theoretical Frameworks 12
+        Subsection 2.1.1: Case Studies 15
+    Section 2.2: Practical Applications 18
+
+...MORE SECTIONS...
+
+Appendix 20
+-------------------------------------------
+
+To add this table of contents to your pdf, run
+`pdftk input.pdf update_info bookmarks.txt output output.pdf`.
+https://stackoverflow.com/questions/30304718/create-bookmarks-into-a-pdf-file-via-command-line
+"""
+)
+parser.add_argument('input', type=str, help="indented table of contents")
+
+args = parser.parse_args()
+with open(args.input, 'r') as input:
+    table_of_contents = input.read()
+    ensure_consistent_table_of_contents_indentation(table_of_contents)
+    indent_amount = identify_table_of_contents_indent_amount(table_of_contents)
+    print_table_of_contents(table_of_contents, indent_amount)
