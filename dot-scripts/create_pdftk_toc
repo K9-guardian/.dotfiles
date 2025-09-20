@@ -85,7 +85,7 @@ Appendix 20
 
 To add this table of contents to your pdf, run
 `pdftk input.pdf update_info bookmarks.txt output output.pdf`.
-https://stackoverflow.com/questions/30304718/create-bookmarks-into-a-pdf-file-via-command-line
+More info here: https://stackoverflow.com/a/30308964
 """
 )
 parser.add_argument('input', type=str, help="indented table of contents")
