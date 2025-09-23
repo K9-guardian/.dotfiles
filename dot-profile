@@ -22,7 +22,7 @@ export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 
 # Programs {{{
 export BEETSDIR='./beets'
-export BORG_PASSCOMMAND='pass borg/k9'
+export BORG_PASSCOMMAND='pass borg/k9guardian'
 export FZF_DEFAULT_COMMAND='rg --files'
 # }}}
 
