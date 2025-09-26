@@ -36,6 +36,9 @@ def identify_table_of_contents_indent_amount(raw_table_of_contents: str) -> int:
             possible_indent_amounts[indent_amount] += 1
         current_leading_whitespace_amount = leading_whitespace_amount
 
+    if not possible_indent_amounts:
+        return 1
+
     return possible_indent_amounts.most_common(1)[0][0]
 
 
