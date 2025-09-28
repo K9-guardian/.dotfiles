@@ -12,5 +12,5 @@ stow --no-folding --dotfiles .
 ./install
 
 # add crontab for backups
-crontab k9guardian_crontab
+crontab k9_crontab
 ```
