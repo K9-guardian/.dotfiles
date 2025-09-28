@@ -1,0 +1,5 @@
+#!/bin/sh
+chgrp -R nasusers /mnt/nas/share
+find /mnt/nas/share -type d -exec chmod 750 {} \;
+find /mnt/nas/share -type f -executable -exec chmod 750 {} \;
+find /mnt/nas/share -type f ! -executable -exec chmod 640 {} \;
