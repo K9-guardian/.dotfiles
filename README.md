@@ -13,7 +13,7 @@ sudo dnf install git git-crypt -y
 git-crypt unlock
 
 sudo dnf install stow -y
-stow --dotfiles .
+stow --no-folding --dotfiles .
 
 ./install # TODO: Automate choices for rust and haskell
 
