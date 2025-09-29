@@ -2,6 +2,7 @@
 \.git-crypt
 \.gitattributes
 install
-k9guardian_crontab
+k9_crontab
+smbshares.conf
 
 ^/README.*

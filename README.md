@@ -13,4 +13,10 @@ stow --no-folding --dotfiles .
 
 # add crontab for backups
 crontab k9_crontab
+
+# TODO: automate?
+# add symlink for nas-perms in /etc/cron.hourly
+sudo ln -s ~/.dotfiles/dot-scripts/nas-perms /etc/cron.hourly/nas-perms
+# add copy for smbshares.conf in /etc/samba/smbshares.conf
+sudo cp ~/.dotfiles/smbshares.conf /etc/samba/smbshares.conf
 ```
