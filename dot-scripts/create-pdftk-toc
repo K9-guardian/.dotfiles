@@ -5,10 +5,10 @@ import argparse
 import re
 
 
-def ensure_consistent_table_of_contents_indentation(table_of_contents: str):
+def ensure_consistent_toc_indentation(toc: str):
     found_spaces, found_tabs = False, False
 
-    for line_number, line in enumerate(table_of_contents.splitlines()):
+    for line_number, line in enumerate(toc.splitlines()):
         leading_whitespace = line[:len(line) - len(line.lstrip())]
         if '\t' in leading_whitespace:
             if ' ' in leading_whitespace or found_spaces:
@@ -20,14 +20,14 @@ def ensure_consistent_table_of_contents_indentation(table_of_contents: str):
             found_spaces = True
 
 
-def identify_table_of_contents_indent_amount(raw_table_of_contents: str) -> int:
+def identify_toc_indent_amount(raw_toc: str) -> int:
     # Using the "compare lines" method by Heather Arthur
     # https://gist.github.com/harthur/c6c939a938db52064a7a
 
     possible_indent_amounts: Counter[int] = Counter()
     current_leading_whitespace_amount = 0
 
-    for line in raw_table_of_contents.splitlines():
+    for line in raw_toc.splitlines():
         leading_whitespace_amount = len(line) - len(line.lstrip())
         indent_amount = abs(leading_whitespace_amount -
                             current_leading_whitespace_amount)
@@ -41,7 +41,7 @@ def identify_table_of_contents_indent_amount(raw_table_of_contents: str) -> int:
     return possible_indent_amounts.most_common(1)[0][0]
 
 
-def print_table_of_contents(table_of_contents: str, indent_amount: int):
+def print_toc(toc: str, indent_amount: int):
 
     def print_line(line_number: int, line: str):
         leading_whitespace_amount = len(line) - len(line.lstrip())
@@ -60,7 +60,7 @@ def print_table_of_contents(table_of_contents: str, indent_amount: int):
         print(f"BookmarkLevel: {indentation_level + 1}")
         print(f"BookmarkPageNumber: {page_number}")
 
-    for line_number, line in enumerate(table_of_contents.splitlines()):
+    for line_number, line in enumerate(toc.splitlines()):
         print_line(line_number, line)
 
 
@@ -95,7 +95,7 @@ parser.add_argument('input', type=str, help="indented table of contents")
 
 args = parser.parse_args()
 with open(args.input, 'r') as input:
-    table_of_contents = input.read()
-    ensure_consistent_table_of_contents_indentation(table_of_contents)
-    indent_amount = identify_table_of_contents_indent_amount(table_of_contents)
-    print_table_of_contents(table_of_contents, indent_amount)
+    toc = input.read()
+    ensure_consistent_toc_indentation(toc)
+    indent_amount = identify_toc_indent_amount(toc)
+    print_toc(toc, indent_amount)
