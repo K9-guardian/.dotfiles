@@ -10,14 +10,18 @@ vim.g.vimtex_mappings_disable = { i = { "]]" } }
 
 -- Move and resize zathura when it is first opened.
 local function open_viewer()
-   local viewer_opened = vim.b.vimtex.viewer.xwin_id and vim.b.vimtex.viewer.xwin_id ~= 0
-
    vim.cmd("VimtexView")
-   vim.cmd("sleep")
-   if (not viewer_opened) then
-      os.execute("wmctrl -ir " .. vim.b.vimtex.viewer.xwin_id .. " -b remove,maximized_vert,maximized_horz")
-      os.execute("xdotool windowsize " .. vim.b.vimtex.viewer.xwin_id .. " 50% 100%")
-      os.execute("xdotool windowmove " .. vim.b.vimtex.viewer.xwin_id .. " 50% 100%")
+
+   for _ = 1, 10 do
+      vim.cmd("sleep 200m")
+      local viewer_opened = vim.b.vimtex.viewer.xwin_id and vim.b.vimtex.viewer.xwin_id ~= 0
+
+      if viewer_opened then
+         os.execute("wmctrl -ir " .. vim.b.vimtex.viewer.xwin_id .. " -b remove,maximized_vert,maximized_horz")
+         os.execute("xdotool windowsize " .. vim.b.vimtex.viewer.xwin_id .. " 50% 100%")
+         os.execute("xdotool windowmove " .. vim.b.vimtex.viewer.xwin_id .. " 50% 100%")
+         break
+      end
    end
 end
 
