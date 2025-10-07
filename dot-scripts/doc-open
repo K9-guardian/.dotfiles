@@ -1,0 +1,16 @@
+#!/bin/sh
+file="$1"
+
+# Launch zathura the background and get PID
+zathura "$file" &
+ZATHURA_PID=$!
+
+# Wait for window to appear and focus with PID
+for i in {1..10}; do
+  sleep 0.2
+  win_id=$(wmctrl -lp | awk -v pid="$ZATHURA_PID" '$3 == pid {print $1}')
+  if [ -n "$win_id" ]; then
+    wmctrl -i -a "$win_id"
+    break
+  fi
+done
