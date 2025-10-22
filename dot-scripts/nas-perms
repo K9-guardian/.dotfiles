@@ -1,5 +1,13 @@
 #!/bin/sh
+
+TIMESTAMP_FILE="/tmp/nas-perms-timestamp"
+if [ ! -f "$TIMESTAMP_FILE" ]; then
+  touch -d "1 hour ago" "$TIMESTAMP_FILE"
+fi
+
 chgrp -R nasusers /mnt/nas/share
-find /mnt/nas/share -type d -exec chmod 750 {} \;
-find /mnt/nas/share -type f -executable -exec chmod 750 {} \;
-find /mnt/nas/share -type f ! -executable -exec chmod 640 {} \;
+find /mnt/nas/share -newer "$TIMESTAMP_FILE" -type d -exec chmod 750 {} \;
+find /mnt/nas/share -newer "$TIMESTAMP_FILE" -type f -executable -exec chmod 750 {} \;
+find /mnt/nas/share -newer "$TIMESTAMP_FILE" -type f ! -executable -exec chmod 640 {} \;
+
+touch "$TIMESTAMP_FILE"
