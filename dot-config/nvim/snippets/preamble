@@ -6,8 +6,9 @@
 \newcommand{\R}{\mathds{R}}
 \newcommand{\Q}{\mathds{Q}}
 \newcommand{\C}{\mathds{C}}
-\newcommand{\set}[1]{\left\{#1\right\}}
 \newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\parens}[1]{\left(#1\right)}
+\newcommand{\set}[1]{\left\{#1\right\}}
 \renewcommand{\lor}{\text{ or }}
 \renewcommand{\land}{\text{ and }}
 \newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
