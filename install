@@ -13,6 +13,8 @@ sudo dnf install git-credential-oauth -y
 
 sudo dnf install sensors -y
 
+sudo dnf install steam-devices -y
+
 sudo dnf install fastfetch openconnect sl -y
 sudo dnf install playerctl -y
 
