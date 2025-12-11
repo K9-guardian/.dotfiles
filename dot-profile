@@ -19,9 +19,9 @@ export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 # }}}
 
 # Programs {{{
-export EZA_ICON_SPACING=2
 export BEETSDIR='/mnt/nas/share/k9/Music/beets'
 export BORG_PASSCOMMAND='pass borg/k9'
+export EZA_ICON_SPACING=2
 export FZF_DEFAULT_COMMAND='rg --files'
 # }}}
 
