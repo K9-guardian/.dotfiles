@@ -31,7 +31,7 @@ sudo dnf install rclone -y
 
 sudo dnf install inkscape -y
 
-sudo dnf install bat fd-find lsd rg tealdeer sd tokei zoxide -y
+sudo dnf install bat fd-find eza rg tealdeer sd tokei zoxide -y
 
 [ -f "$HOME/.cargo/env" ] \
   && . "$HOME/.cargo/env" \

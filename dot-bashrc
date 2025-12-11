@@ -71,10 +71,8 @@ case "$TERM" in
     ;;
 esac
 # }}}
-
-# Aliases {{{
-if [ "$color_prompt" = yes -a -x /usr/bin/lsd ]; then
-  alias ls='lsd --group-directories-first'
+if [ "$color_prompt" = yes -a -x /usr/bin/eza ]; then
+  alias ls='eza --group-directories-first --time-style "+%b %d %I:%M %p" --icons=auto'
   alias tree='ls --tree'
 else
   alias ls='ls --color --group-directories-first'
