@@ -20,11 +20,12 @@ sudo dnf install neovim -y
 
 sudo dnf install rclone -y
 
-sudo dnf install bat fd-find lsd rg tokei zoxide -y
+sudo dnf install bat fd-find rg tokei zoxide -y
 
 [ -f "$HOME/.cargo/env" ] \
   && . "$HOME/.cargo/env" \
   && cargo install du-dust # no dust in fedora :(
+  && cargo install eza # no eza in fedora server edition :(
 
 # Packer
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
