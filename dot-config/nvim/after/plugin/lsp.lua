@@ -46,7 +46,7 @@ local on_attach = function(_, bufnr)
       group = "lsp_highlight",
    })
 
-   local format_blacklist = { "haskell", "java", "typescript", "typescriptreact", "python" }
+   local format_blacklist = { "java", "typescript", "typescriptreact", "python" }
    vim.api.nvim_create_augroup("format_on_save", {})
    vim.api.nvim_create_autocmd("BufWritePre", {
       callback = function(_)
@@ -84,7 +84,7 @@ lsp.gopls.setup({ on_attach = on_attach, capabilities = capabilities })
 lsp.hls.setup {
    on_attach = on_attach,
    capabilities = capabilities,
-   filetypes = { "haskell", "lhaskell" }
+   filetypes = { "haskell", "lhaskell", "cabal" }
 }
 lsp.jdtls.setup({ on_attach = on_attach, capabilities = capabilities })
 lsp.julials.setup({ on_attach = on_attach, capabilities = capabilities })
