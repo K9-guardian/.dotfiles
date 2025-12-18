@@ -39,17 +39,17 @@ vim.keymap.set("n", "k", count_motion_with_jump("k"))
 local function search_word_anchor(flags)
    return function()
       flags = flags or ""
+      local current_hlsearch = vim.v.hlsearch
       local word = vim.fn.expand("<cword>")
       local pattern = "\\<" .. vim.fn.escape(word, "\\/.*$^~[]") .. "\\>"
       local last_pattern = vim.fn.getreg("/")
-      local current_hlsearch = vim.o.hlsearch
 
       vim.fn.setreg("/", pattern)
-      vim.o.hlsearch = true
+      vim.v.hlsearch = true
 
       vim.cmd("normal! m'")
 
-      if last_pattern == pattern and current_hlsearch then
+      if last_pattern == pattern and current_hlsearch ~= 0 then
          vim.fn.search(pattern, flags .. "W")
       else
          vim.fn.search(pattern, flags .. "cn")
