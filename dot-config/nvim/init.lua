@@ -1,4 +1,4 @@
--- Source - https://stackoverflow.com/a
+-- Source - https://stackoverflow.com/a/76199012
 -- Posted by Yanis.F
 -- Retrieved 2025-12-15, License - CC BY-SA 4.0
 
@@ -27,3 +27,4 @@ require("k9guardian.settings")
 require("k9guardian.keymaps")
 require("k9guardian.autocmds")
 require("k9guardian.plugins")
+-- require("k9guardian.lazy")
