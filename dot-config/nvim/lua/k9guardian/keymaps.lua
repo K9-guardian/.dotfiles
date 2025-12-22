@@ -61,3 +61,4 @@ vim.keymap.set("n", "*", search_word_anchor())
 vim.keymap.set("n", "#", search_word_anchor("b"))
 
 vim.api.nvim_create_user_command("W", "write", {})
+vim.api.nvim_create_user_command("ReloadConfig", ReloadConfig, {})
