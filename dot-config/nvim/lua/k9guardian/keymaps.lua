@@ -40,25 +40,45 @@ local function search_word_anchor(flags)
    return function()
       flags = flags or ""
       local current_hlsearch = vim.v.hlsearch
-      local word = vim.fn.expand("<cword>")
-      local pattern = "\\<" .. vim.fn.escape(word, "\\/.*$^~[]") .. "\\>"
       local last_pattern = vim.fn.getreg("/")
+      local pattern
+
+      -- Get pattern (either word under cursor or visual selection)
+      local in_visual_mode = vim.api.nvim_get_mode().mode:find("[vV]")
+      if in_visual_mode then
+         vim.cmd('noautocmd normal! y')
+         local selected_text = vim.fn.getreg('"')
+         pattern = vim.fn.escape(selected_text, "\\/.*$^~[]")
+      else
+         local word = vim.fn.expand("<cword>")
+         pattern = "\\<" .. vim.fn.escape(word, "\\/.*$^~[]") .. "\\>"
+      end
 
       vim.fn.setreg("/", pattern)
       vim.v.hlsearch = true
-
       vim.cmd("normal! m'")
+
+      if in_visual_mode then
+         vim.api.nvim_input("<Esc>")
+      end
 
       if last_pattern == pattern and current_hlsearch ~= 0 then
          vim.fn.search(pattern, flags .. "W")
       else
          vim.fn.search(pattern, flags .. "cn")
       end
+
+      -- Set search direction
+      if flags:find("b") then
+         vim.v.searchforward = 0
+      else
+         vim.v.searchforward = 1
+      end
    end
 end
 
-vim.keymap.set("n", "*", search_word_anchor())
-vim.keymap.set("n", "#", search_word_anchor("b"))
+vim.keymap.set({ "n", "x" }, "*", search_word_anchor())
+vim.keymap.set({ "n", "x" }, "#", search_word_anchor("b"))
 
 vim.api.nvim_create_user_command("W", "write", {})
 vim.api.nvim_create_user_command("ReloadConfig", ReloadConfig, {})
