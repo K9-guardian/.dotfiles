@@ -84,7 +84,6 @@ lsp.gopls.setup({ on_attach = on_attach, capabilities = capabilities })
 lsp.hls.setup {
    on_attach = on_attach,
    capabilities = capabilities,
-   filetypes = { "haskell", "lhaskell", "cabal" }
 }
 lsp.jdtls.setup({ on_attach = on_attach, capabilities = capabilities })
 lsp.julials.setup({ on_attach = on_attach, capabilities = capabilities })
