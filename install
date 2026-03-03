@@ -3,6 +3,9 @@
 # Rustup
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+# Croc
+# curl https://getcroc.schollz.com | bash
+
 sudo dnf install sensors -y
 
 sudo dnf install fastfetch openconnect sl -y
@@ -13,7 +16,6 @@ python3 -m pip install beets beets[fetchart] beets-alternatives beets-describe
 
 sudo dnf install ffmpeg -y
 
-sudo dnf install croc -y
 sudo dnf install syncthing -y
 
 sudo dnf install neovim -y
