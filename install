@@ -11,6 +11,9 @@ sudo dnf install git-credential-oauth -y
 # Atuin
 # curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 
+# Croc
+# curl https://getcroc.schollz.com | bash
+
 sudo dnf install sensors -y
 
 sudo dnf install steam-devices -y
@@ -22,7 +25,6 @@ sudo dnf install calibre pdftk -y
 
 sudo dnf install ffmpeg vlc libmediainfo mkvtoolnix -y
 
-sudo dnf install croc -y
 sudo dnf install syncthing -y
 
 sudo dnf install kitty neovim -y
