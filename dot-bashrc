@@ -28,7 +28,7 @@ shopt -s globstar
 # Set up completion/keybinds for applications
 [ -x /usr/bin/fzf ] && eval "$(fzf --bash)"
 [ -x $HOME/.atuin/bin/atuin ] && eval "$($HOME/.atuin/bin/atuin init bash --disable-up-arrow)"
-[ -x /usr/bin/zoxide ] && eval "$(zoxide init --cmd cd bash)"
+[ -x ~/.cargo/bin/zoxide ] && eval "$(zoxide init --cmd cd bash)"
 # }}}
 
 # Prompt {{{
