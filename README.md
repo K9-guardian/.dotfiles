@@ -11,6 +11,10 @@ stow --no-folding --dotfiles .
 
 ./install
 
+# nasusers group
+sudo groupadd nasusers
+sudo usermod -aG nasusers ...
+
 # add crontab for backups
 crontab k9_crontab
 

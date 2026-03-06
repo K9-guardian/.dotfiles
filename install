@@ -15,18 +15,21 @@ python3 -m ensurepip --upgrade
 python3 -m pip install --upgrade pip
 python3 -m pip install beets beets[fetchart] beets-alternatives beets-describe
 
+sudo dnf install podman-compose -y
+
 sudo dnf install ffmpeg -y
 
 sudo dnf install neovim -y
 
 sudo dnf install rclone -y
 
-sudo dnf install bat fd-find ripgrep tokei -y
+sudo dnf install bat fd-find fzf ripgrep tokei -y
 
 [ -f "$HOME/.cargo/env" ] \
   && . "$HOME/.cargo/env" \
   && cargo install du-dust \
   && cargo install eza \
+  && cargo install tealdeer \
   && cargo install zoxide
 
 # Packer
