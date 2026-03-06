@@ -33,11 +33,12 @@ sudo dnf install rclone -y
 
 sudo dnf install inkscape -y
 
-sudo dnf install bat fd-find eza rg tealdeer sd tokei zoxide -y
+sudo dnf install bat fd-find eza rg sd tokei zoxide -y
 
 [ -f "$HOME/.cargo/env" ] \
   && . "$HOME/.cargo/env" \
-  && cargo install du-dust # no dust in fedora :(
+  && cargo install du-dust \
+  && cargo install tealdeer
 
 sudo dnf install clojure julia racket swi-prolog -y
 # TODO: Scryer Prolog

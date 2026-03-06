@@ -1,2 +1,2 @@
 @hourly "$HOME/.secret/cloud-backup"
-@hourly tldr --update
+@hourly "$HOME/.cargo/bin/tldr" --update
