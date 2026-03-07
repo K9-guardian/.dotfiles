@@ -1,5 +1,5 @@
 #!/bin/sh
-export BORG_REPO="/run/media/k9guardian/Backups/borg_homedirs/"
+export BORG_REPO="/run/media/k9guardian/Backup/borg_homedirs/"
 export BORG_PASSCOMMAND="pass borg/k9guardian"
 borg create --stats --progress ::{user}@{hostname}:{now} \
   "$HOME/Documents" \
