@@ -15,6 +15,8 @@ python3 -m ensurepip --upgrade
 python3 -m pip install --upgrade pip
 python3 -m pip install beets beets[fetchart] beets-alternatives beets-describe
 
+python3 -m pip install -U "yt-dlp[default]"
+
 sudo dnf install podman-compose -y
 
 sudo dnf install ffmpeg -y
