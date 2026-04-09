@@ -1,4 +1,4 @@
-# Dotfiles for hippocampus
+# Dotfiles for mimir
 
 Usage: 
 First import `private.gpg` for `git-crypt` - used for `rclone.conf`.
@@ -11,17 +11,6 @@ stow --no-folding --dotfiles .
 
 ./install
 
-# nasusers group
-sudo groupadd nasusers
-sudo usermod -aG nasusers ...
-
 # add crontab for backups
 crontab k9_crontab
-
-# TODO: automate?
-# add copy for nas-perms in /etc/cron.hourly
-# #!/bin/sh
-# /home/k9/.scripts/nas-perms
-# add copy for smbshares.conf in /etc/samba/smbshares.conf
-sudo cp ~/.dotfiles/smbshares.conf /etc/samba/smbshares.conf
 ```
