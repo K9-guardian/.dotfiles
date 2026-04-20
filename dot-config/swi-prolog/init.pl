@@ -1,3 +1,6 @@
+:- multifile user:prolog_file_type/2.
+user:prolog_file_type(pro, prolog).
+
 :- set_prolog_flag(back_quotes, codes).
 :- set_prolog_flag(double_quotes, chars).
 :- use_module(library(apply)).
