@@ -32,6 +32,7 @@ sudo dnf install bat fd-find fzf ripgrep tokei -y
   && cargo install du-dust \
   && cargo install eza \
   && cargo install tealdeer \
+  && cargo install sd \
   && cargo install zoxide
 
 # Packer
