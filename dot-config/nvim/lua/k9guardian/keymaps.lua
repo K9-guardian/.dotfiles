@@ -81,4 +81,26 @@ vim.keymap.set({ "n", "x" }, "*", search_word_anchor())
 vim.keymap.set({ "n", "x" }, "#", search_word_anchor("b"))
 
 vim.api.nvim_create_user_command("W", "write", {})
-vim.api.nvim_create_user_command("ReloadConfig", ReloadConfig, {})
+
+vim.keymap.set("n", "<Leader>t", "<Cmd>Resurrect<CR>", { silent = false })
+
+vim.api.nvim_create_user_command("Tabm", function(opts)
+   local arg = opts.args
+   if arg:sub(1, 1) == "+" or arg:sub(1, 1) == "-" then
+      vim.cmd("tabmove " .. arg)
+   else
+      local target = tonumber(arg)
+      if target < 1 or target > vim.fn.tabpagenr("$") then
+         print("Tabm: " .. arg .. " out of range")
+         return
+      end
+      -- :tabmove N means "after the tab currently at position N", so moving right
+      -- requires N (not N-1) because the departure of the current tab doesn't shift
+      -- the target reference; moving left requires N-1 for the same reason.
+      if vim.fn.tabpagenr() < target then
+         vim.cmd("tabmove " .. target)
+      else
+         vim.cmd("tabmove " .. (target - 1))
+      end
+   end
+end, { nargs = 1 })
