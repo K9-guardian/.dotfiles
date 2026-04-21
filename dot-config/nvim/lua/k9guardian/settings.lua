@@ -59,7 +59,5 @@ local function render_tabline()
    return result .. "%T%#TabLineFill#"
 end
 
-vim.api.nvim_create_autocmd({ "TabEnter", "BufEnter", "BufModifiedSet" }, {
-   callback = function() vim.opt.tabline = render_tabline() end,
-})
-vim.opt.tabline = render_tabline()
+_G.k9_render_tabline = render_tabline
+vim.opt.tabline = "%!v:lua.k9_render_tabline()"
