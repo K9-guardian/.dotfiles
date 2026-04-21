@@ -258,3 +258,7 @@ moduli
 recurse
 constructionTime'/!
 traceMsg/!
+AST
+expr
+cmd
+brainfuck
